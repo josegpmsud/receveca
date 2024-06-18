@@ -16,6 +16,14 @@
                                 {{ __('Contratos') }}
                             </span>
 
+                            <form method="GET">
+                                <div class="input-group mb-3">
+                                    <input name= "search" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Buscar</button>
+                                </div>
+    
+                            </form>
+
                              <div class="float-right">
                                 <a href="{{ route('contratos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
@@ -55,8 +63,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 										<td >{{ $contrato->id_usuario }}</td>
-										<td >{{ $contrato->id_vehiculo }}</td>
-										<td >{{ $contrato->id_plan }}</td>
+										<td >{{ $contrato->vehiculo->placa }}</td>
+										<td >{{ $contrato->plan->descripcion }}</td>
 										<td >{{ $contrato->fecha_ini }}</td>
 										<td >{{ $contrato->fecha_fin }}</td>
 										<td >{{ $contrato->codigo }}</td>

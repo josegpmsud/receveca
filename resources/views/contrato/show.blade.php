@@ -26,11 +26,11 @@
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Id Vehiculo:</strong>
-                                    {{ $contrato->id_vehiculo }}
+                                    {{ $contrato->vehiculo->placa }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Id Plan:</strong>
-                                    {{ $contrato->id_plan }}
+                                    {{ $contrato->plan->descripcion }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
                                     <strong>Fecha Ini:</strong>

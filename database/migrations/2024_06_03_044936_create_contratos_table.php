@@ -37,14 +37,14 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->date('fecha_ini');
-            $table->date('fecha_fin');
+            $table->date('fecha_ini')->default(now());
+            $table->date('fecha_fin')->default(now()->addYear());
 
             $table->integer('codigo')->unique();        
             $table->float('cobertura');
             $table->float('pago');
             
-            $table->tinyInteger('estado');
+            $table->tinyInteger('estado')->default(1);
             
             $table->timestamps();
         });

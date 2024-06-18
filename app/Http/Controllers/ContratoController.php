@@ -6,8 +6,10 @@ use App\Models\Contrato;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContratoRequest;
+use App\Models\Plan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+
 
 class ContratoController extends Controller
 {
@@ -16,7 +18,17 @@ class ContratoController extends Controller
      */
     public function index(Request $request): View
     {
-        $contratos = Contrato::paginate();
+        $contratos = Contrato::query()  
+        //->with(['plan'])
+        ->when(request('search'), function ($query) {
+            return $query->where('codigo','LIKE','%' . request('search') .'%')
+            ->orWhere('cobertura','LIKE','%' . request('search') .'%')
+            ->orWhereHas('plan', function ($q) {
+                $q->where('descripcion','LIKE','%'. request('search') . '%');
+            });
+            
+        })
+        ->paginate();
 
         return view('contrato.index', compact('contratos'))
             ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
@@ -28,8 +40,9 @@ class ContratoController extends Controller
     public function create(): View
     {
         $contrato = new Contrato();
+        $plans = Plan::all();       
 
-        return view('contrato.create', compact('contrato'));
+        return view('contrato.create', compact('contrato','plans'));
     }
 
     /**
@@ -59,8 +72,9 @@ class ContratoController extends Controller
     public function edit($id): View
     {
         $contrato = Contrato::find($id);
+        $plans = Plan::all();
 
-        return view('contrato.edit', compact('contrato'));
+        return view('contrato.edit', compact('contrato','plans'));
     }
 
     /**
