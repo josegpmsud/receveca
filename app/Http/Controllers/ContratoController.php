@@ -45,6 +45,14 @@ class ContratoController extends Controller
         return view('contrato.create', compact('contrato','plans'));
     }
 
+    public function create_vehiculo($id): View
+    {
+        $contrato = new Contrato();
+        $plans = Plan::all();       
+
+        return view('contrato.create_vehiculo', compact('contrato','plans','id'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */

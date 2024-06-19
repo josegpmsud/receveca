@@ -74,6 +74,8 @@
 
                                             <td>
                                                 <form action="{{ route('vehiculos.destroy', $vehiculo->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('contratos.create_vehiculo', $vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Contrato') }}</a>
+                                                    
                                                     <a class="btn btn-sm btn-primary " href="{{ route('vehiculos.show', $vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('vehiculos.edit', $vehiculo->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf

@@ -14,6 +14,18 @@ class RolSeeder extends Seeder
      */
     public function run()
     {
-        Rol::factory(3)->create();
+        //Rol::factory(3)->create();
+
+        $rol = new Rol();
+        $rol-> descripcion = "Administrador";
+        $rol->save();
+
+        $rol = new Rol();
+        $rol-> descripcion = "Asesor";
+        $rol->save();
+
+        $rol = new Rol();
+        $rol-> descripcion = "Cliente";
+        $rol->save();
     }
 }

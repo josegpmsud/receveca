@@ -1,7 +1,9 @@
 <?php
 
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+
 
 
 Route::get('/', function () {
@@ -24,3 +26,5 @@ Route::resource('usos', App\Http\Controllers\UsoController::class);
 Route::resource('clases', App\Http\Controllers\ClaseController::class);
 Route::resource('colors', App\Http\Controllers\ColorController::class);
 
+
+Route::get('/contratos/create/{id}', [App\Http\Controllers\ContratoController::class, 'create_vehiculo'])->name('contratos.create_vehiculo');

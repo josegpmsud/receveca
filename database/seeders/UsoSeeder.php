@@ -14,6 +14,20 @@ class UsoSeeder extends Seeder
      */
     public function run()
     {
-        Uso::factory(5)->create();
+        //Uso::factory(5)->create();
+        $usos = [
+            "Particular",
+            "Trasporte",
+            "Taxi",
+            "Viajes",
+            "Servicio",                      
+        ];
+
+        foreach ($usos as $uso) {
+            Uso::create([
+                'descripcion' => $uso,                
+            ]);            
+            
+        }
     }
 }

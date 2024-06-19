@@ -15,6 +15,25 @@ class ClaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Clase::factory(10)->create();
+        //Clase::factory(10)->create();
+        $clases = [
+            "Camioneta",
+            "Carrito",
+            "Camion",
+            "Microbus",
+            "Exprexo",
+            "Moto", 
+            "Patineta",
+            "Bicicleta",
+            "Grua", 
+            "Contenedor",           
+        ];
+
+        foreach ($clases as $clase) {
+            Clase::create([
+                'descripcion' => $clase,                
+            ]);            
+            
+        }
     }
 }

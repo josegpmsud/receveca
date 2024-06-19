@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             ColorSeeder::class,
             MarcaSeeder::class,
             RolSeeder::class,
+            UserSeeder::class,
             TipoSeeder::class,
             UsoSeeder::class,
             UsuarioSeeder::class,

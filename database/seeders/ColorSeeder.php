@@ -14,6 +14,45 @@ class ColorSeeder extends Seeder
      */
     public function run()
     {
-        Color::factory(10)->create();
-    }
+        //Color::factory(10)->create();
+        $colores = [
+            "Amarillo",
+            "Azul",
+            "Beige",
+            "Bordo",
+            "Carmesí",
+            "Celeste",
+            "Cian",
+            "Cobalto",
+            "Colorado",
+            "Crema",
+            "Dorado",
+            "Fucsia",
+            "Gris",
+            "Lima",
+            "Magenta",
+            "Marfil",
+            "Morado",
+            "Naranja",
+            "Negro",
+            "Oro",
+            "Pardo",
+            "Plata",
+            "Purpura",
+            "Rosa",
+            "Rojo",
+            "Rubí",
+            "Sanguina",
+            "Verde",
+            "Violeta",
+        ];
+
+        foreach ($colores as $color) {
+            Color::create([
+                'descripcion' => $color,                
+            ]);            
+            
+        }}
+
+        
 }
