@@ -8,7 +8,7 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="id_vehiculo" class="form-label">{{ __('Id Vehiculo') }}</label>
-            <input type="text" disabled name="id_vehiculo" class="form-control @error('id_vehiculo') is-invalid @enderror" value="{{ $id }}" id="id_vehiculo" placeholder="Id Vehiculo">
+            <input type="text" name="id_vehiculo" class="form-control @error('id_vehiculo') is-invalid @enderror" value="{{ $id }}" id="id_vehiculo" placeholder="Id Vehiculo">
             {!! $errors->first('id_vehiculo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         {{--

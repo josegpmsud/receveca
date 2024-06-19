@@ -36,15 +36,15 @@
                                     <tr>
                                         <th>No</th>
                                         
-									<th >Id Cliente</th>
-									<th >Id Marca</th>
-									<th >Id Clase</th>
+									<th >Cliente</th>
+									<th >Marca</th>
+									<th >Clase</th>
 									<th >Modelo</th>
-									<th >Id Color</th>
-									<th >Id Tipo</th>
-									<th >Id Uso</th>
+									<th >Color</th>
+									<th >Tipo</th>
+									<th >Uso</th>
 									<th >Placa</th>
-									<th >Ano</th>
+									<th >Año</th>
 									<th >Peso</th>
 									<th >Serial Motor</th>
 									<th >Puestos</th>
@@ -58,13 +58,13 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-										<td >{{ $vehiculo->id_cliente }}</td>
-										<td >{{ $vehiculo->id_marca }}</td>
-										<td >{{ $vehiculo->id_clase }}</td>
+										<td >{{ $vehiculo->cliente->nombre }} {{ $vehiculo->cliente->apellido }}</td>
+										<td >{{ $vehiculo->marca->descripcion }}</td>
+										<td >{{ $vehiculo->clase->descripcion }}</td>
 										<td >{{ $vehiculo->modelo }}</td>
-										<td >{{ $vehiculo->id_color }}</td>
-										<td >{{ $vehiculo->id_tipo }}</td>
-										<td >{{ $vehiculo->id_uso }}</td>
+										<td >{{ $vehiculo->color->descripcion }}</td>
+										<td >{{ $vehiculo->tipo->descripcion  }}</td>
+										<td >{{ $vehiculo->uso->descripcion  }}</td>
 										<td >{{ $vehiculo->placa }}</td>
 										<td >{{ $vehiculo->ano }}</td>
 										<td >{{ $vehiculo->peso }}</td>
