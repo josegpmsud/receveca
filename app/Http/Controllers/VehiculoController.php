@@ -6,6 +6,11 @@ use App\Models\Vehiculo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\VehiculoRequest;
+use App\Models\Clase;
+use App\Models\Color;
+use App\Models\Marca;
+use App\Models\Tipo;
+use App\Models\Uso;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -32,6 +37,18 @@ class VehiculoController extends Controller
         return view('vehiculo.create', compact('vehiculo'));
     }
 
+    public function create_cliente($id): View
+    {
+        $vehiculo = new Vehiculo();
+        
+        $marcas = Marca::all();   
+        $clases = Clase::all();
+        $colors = Color::all();
+        $tipos = Tipo::all(); 
+        $usos = Uso::all();     
+
+        return view('vehiculo.create_cliente', compact('vehiculo','marcas','clases','colors','tipos','usos','id'));
+    }
     /**
      * Store a newly created resource in storage.
      */

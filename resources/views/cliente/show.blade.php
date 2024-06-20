@@ -71,6 +71,8 @@
                     
                 </ul>
                 <div class="table-responsive">
+                    <a class="btn btn-sm btn-primary " href="{{ route('vehiculos.create_cliente', $cliente->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Agregar Vehiculo') }}</a>
+                                                    
                     <table class="table table-striped table-hover">
                         <thead class="thead">
                             <tr>

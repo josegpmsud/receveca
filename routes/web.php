@@ -28,3 +28,4 @@ Route::resource('colors', App\Http\Controllers\ColorController::class);
 
 
 Route::get('/contratos/create/{id}', [App\Http\Controllers\ContratoController::class, 'create_vehiculo'])->name('contratos.create_vehiculo');
+Route::get('/vehiculos/create/{id}', [App\Http\Controllers\VehiculoController::class, 'create_cliente'])->name('vehiculos.create_cliente');
