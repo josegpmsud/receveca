@@ -9,6 +9,7 @@ use App\Http\Requests\ContratoRequest;
 use App\Models\Plan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 
 class ContratoController extends Controller
@@ -102,5 +103,23 @@ class ContratoController extends Controller
 
         return Redirect::route('contratos.index')
             ->with('success', 'Contrato deleted successfully');
+    }
+
+    public function pdf_generator_get($id){
+
+        //echo 'PDF'; die();
+        
+        //$contratos = Contrato::get();
+        $contrato = Contrato::find($id);
+        $data = [
+            'title' => 'Contrato',
+            'date' => date('Y-m-d'),
+            'contrato' => $contrato           
+            
+        ];
+        $pdf = PDF::loadView('contrato.myPDF', $data);
+        //return $pdf->download('lista_post.pdf');
+        return $pdf->stream('lista_post.pdf');
+        
     }
 }

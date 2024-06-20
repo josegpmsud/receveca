@@ -74,6 +74,8 @@
 
                                             <td>
                                                 <form action="{{ route('contratos.destroy', $contrato->id) }}" method="POST">
+                                                    <a href="{{url('pdf_generator',$contrato->id)}}" target="_blank" class="btn btn-primary">Dowload PDF</a>
+
                                                     <a class="btn btn-sm btn-primary " href="{{ route('contratos.show', $contrato->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('contratos.edit', $contrato->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
