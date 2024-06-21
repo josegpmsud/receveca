@@ -48,21 +48,22 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else   
+                        @else
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('clientes.index')}}">Clientes</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('vehiculos.index')}}">vehiculos</a>
-                        </li>                        
+                        </li>
+
+
+
+                        @can('admin')
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contratos.index')}}">Contratos</a>
                         </li>
 
-
-                        @can('admin')                           
-                        
-                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('usuarios.index')}}">usuarios</a>
                         </li>
@@ -88,17 +89,17 @@
                             <a class="nav-link" href="{{route('clases.index')}}">Clases</a>
                         </li>
                         <li class="nav-item">
-                            
-                            
+
+
                         @endcan
-                            
-                            
+
+
 
 
                             <a class="nav-link" href="{{route('contratos.index')}}">Informes</a>
                         </li>
-                            
-                       
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} || {{ Auth::user()->id_rol }}
