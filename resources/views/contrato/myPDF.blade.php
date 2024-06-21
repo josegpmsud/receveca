@@ -27,6 +27,8 @@
             
                 <tr>
                   <td>{{$contrato->codigo}}</td>
+                  <td>Vigencia desde {{$contrato->fecha_ini}} hasta {{$contrato->fecha_fin}}</td>
+                  
                   <td>{{$contrato->vehiculo->cliente->nombre}} {{$contrato->vehiculo->cliente->apellido}}</td>
                   <td>{{$contrato->pago}}</td>
                   <td>{{$contrato->cobertura}}</td>

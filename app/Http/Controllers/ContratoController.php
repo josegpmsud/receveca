@@ -106,7 +106,7 @@ class ContratoController extends Controller
     }
 
     public function pdf_generator_get($id){
-
+        
         //echo 'PDF'; die();
         
         //$contratos = Contrato::get();
@@ -117,6 +117,8 @@ class ContratoController extends Controller
             'contrato' => $contrato           
             
         ];
+
+
         $pdf = PDF::loadView('contrato.myPDF', $data);
         //return $pdf->download('lista_post.pdf');
         return $pdf->stream('lista_post.pdf');
