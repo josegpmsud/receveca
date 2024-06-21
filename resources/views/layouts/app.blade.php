@@ -60,8 +60,8 @@
                         </li>
 
 
+                        @can('admin')                           
                         
-                            
                         
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('usuarios.index')}}">usuarios</a>
@@ -89,7 +89,8 @@
                         </li>
                         <li class="nav-item">
                             
-                        
+                            
+                        @endcan
                             
                             
 

@@ -23,6 +23,8 @@ class UserSeeder extends Seeder
 
         $user->save();
 
+        $user->assignRole('admin');
+
 
         $user= new User();        
 
@@ -32,5 +34,7 @@ class UserSeeder extends Seeder
         $user->id_rol= "2";
         
         $user->save();
+
+        $user->assignRole('asesor');
     }
 }
