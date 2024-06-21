@@ -58,11 +58,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contratos.index')}}">Contratos</a>
                         </li>
+
+
+                        
+                            
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('usuarios.index')}}">usuarios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{route('plans.index')}}">planes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('plans.index')}}">planes</a>
                                 </li>
                         <li class="nav-item">
                                 <a class="nav-link" href="{{route('marcas.index')}}">marcas</a>
@@ -83,6 +88,12 @@
                             <a class="nav-link" href="{{route('clases.index')}}">Clases</a>
                         </li>
                         <li class="nav-item">
+                            
+                        
+                            
+                            
+
+
                             <a class="nav-link" href="{{route('contratos.index')}}">Informes</a>
                         </li>
                             
