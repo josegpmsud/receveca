@@ -35,11 +35,11 @@ Ejecuta el comando desde una terminal cmd
 
 - Luego ejecutas las migraciones con el siguiente comando:
 
-`php artisan migration`
+`php artisan migrate`
 
 - luego
 
-`php artisan migration:fresh --seed`
+`php artisan migrate:fresh --seed`
 
 - Por defecto se han creado 3 usuarios
 
