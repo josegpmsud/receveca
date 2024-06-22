@@ -1,14 +1,14 @@
 # Instrucciones de implementacion del proyecto
 
 El Proyecto esta desarrollado en Laravel 11.10 y Php 8.2.0
-(Tener en cuenta para los requisitos para que lo puedas manipular como desarrollador)
+(Tener en cuenta los requisitos para que lo puedas manipular como desarrollador)
 
-Cuando el proyecto este en producion solo de debe tener instalado un navegador Wed de su prefecrencia para utilizar el sistema.
+Cuando el proyecto este en produccion solo de debe tener instalado un navegador Wed de su prefecrencia para utilizar el sistema.
 
 ## Requisitos previos para la instalacion
 
 - Tener instalado un servidor local como XAMPP
-- Tener intalado una version de php 8.2.0 o superior
+- Tener instalado una version de php 8.2.0 o superior
 - Tener instalado git ultima version disponible
 - Tener instalado composer ultima version
 - Tener instalado node.js ultima version 
@@ -16,10 +16,15 @@ Cuando el proyecto este en producion solo de debe tener instalado un navegador W
 
 ## Guia de instalación
 
-- Clona el repositorio con git de la rama master y crea una nueva rama con el nombre que le desea dar (Lo puedes guardar en la carpeta htdoc si utilizas XAMPP)
-Ejecuta el comando desde una terminal cmd
+- Clona el repositorio con git de la rama master, (Lo puedes guardar en la carpeta htdoc si utilizas XAMPP)
+Ejecuta los comando desde una terminal cmd
 
 `git clone https://github.com/josegpmsud/receveca.git`
+
+- Crea una nueva rama con el nombre que le desea dar: "newbranch" de esta manera 
+
+`git branch newbranch`
+
 
 ### Luego ingresa a la carpeta del proyecto y realiza lo siguiente:
 
@@ -33,11 +38,11 @@ Ejecuta el comando desde una terminal cmd
 
 - Luego enciende los servicios de MySql y Apache
 
-- Luego ejecutas las migraciones con el siguiente comando:
+- Luego ejecutas desde otra terminal las migraciones con el siguiente comando:
 
 `php artisan migrate`
 
-- luego
+- luego ejecuta los seeders con el siguiente comando (esto es para cargar la base de datos con registros de prueba para nuestra aplicacion)
 
 `php artisan migrate:fresh --seed`
 
@@ -47,7 +52,7 @@ Ejecuta el comando desde una terminal cmd
 "asesor@asesor" que tiene permisos de asesor <br>
 "cliente@cliente" que tiene permisos de asesor <br>
 
-todos tienen la misma contraseña es esta: "12345678"
+todos tienen la misma contraseña, es esta: "12345678"
 
 
 ### Felicitaciones ya tienes corriendo el proyecto ahora puedes revisarlo y anotar notas las mejora que aun estan pendientes por desarrollo. siente libre de hacer las mejoras en tu rama y hacer tus susgerencias.

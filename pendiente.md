@@ -5,7 +5,12 @@
 - Usuario
 - Rol
 
-`Razon: ya los nombres utilizados y la logica de roles y permisos se ha modificado, ahora se usa User para Usuario`
+`Razon: ya los nombres utilizados y la logica de roles y permisos se ha modificado, ahora se usa User para Usuario y Role para Rol`
+
+## Crar crud con vistas de permisos a:
+
+- Role
+- Asignacion de roles a usuarios
 
 ## Modificar los permisos y protejer rutas y botones que no esten habilitados para los diferentes roles
 
