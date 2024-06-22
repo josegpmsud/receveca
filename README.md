@@ -50,7 +50,7 @@ Ejecuta los comando desde una terminal cmd
 
 "admin@admin" que tiene permisos de admin <br>
 "asesor@asesor" que tiene permisos de asesor <br>
-"cliente@cliente" que tiene permisos de asesor <br>
+"cliente@cliente" que tiene permisos de cliente <br>
 
 todos tienen la misma contraseña, es esta: "12345678"
 
