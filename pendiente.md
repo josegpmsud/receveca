@@ -1,5 +1,10 @@
 # Aqui se estara agregando la lista de implementaciones pendientes en el proyecto
 
+## Selectores de nacionalidad
+
+V, E ,P, J, G
+
+
 ## Eliminar migraciones, modelos, relaciones y vistas no utilizadas en el sistema de los siguentes:
 
 - Usuario
@@ -7,7 +12,7 @@
 
 `Razon: ya los nombres utilizados y la logica de roles y permisos se ha modificado, ahora se usa User para Usuario y Role para Rol`
 
-## Crar crud con vistas de permisos a:
+## Crear crud con vistas de permisos a:
 
 - Role
 - Asignacion de roles a usuarios
@@ -45,5 +50,13 @@
 - Buscar imagenes alucivas a RECEVECA
 - Selecionar colores
 
+## Pagina principal del servicio
+
+- Imagenes y Textos alucivos a la empresa asegurado
+
+## Manual de usuario
+
+- Realizar paso a paso manual de usuario final
+- Mejorar manual de instalación
 
 

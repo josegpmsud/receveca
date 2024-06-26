@@ -17,7 +17,7 @@ class ClienteFactory extends Factory
     public function definition(): array
     {
         return [
-            'nac' => fake()->text(5),
+            'nac' => fake()->text(5),//['V','E', 'P', 'J', 'G']
             'nombre' => fake()->firstName(),
             'apellido' => fake()->lastName(),
             'cedula_rif' => fake()->unique()->text(10),
