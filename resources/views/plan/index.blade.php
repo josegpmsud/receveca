@@ -35,7 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 									<th >Ter Muerte</th>
 									<th >Ter Invalidez</th>
 									<th >Ter Medicos</th>
@@ -61,7 +61,7 @@
                                     @foreach ($plans as $plan)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 										<td >{{ $plan->ter_muerte }}</td>
 										<td >{{ $plan->ter_invalidez }}</td>
 										<td >{{ $plan->ter_medicos }}</td>
@@ -82,11 +82,11 @@
 
                                             <td>
                                                 <form action="{{ route('plans.destroy', $plan->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('plans.show', $plan->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('plans.edit', $plan->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('plans.show', $plan->id) }}"><i class="fa fa-fw fa-eye"></i> <i class="bi bi-file-earmark"></i></a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('plans.edit', $plan->id) }}"><i class="fa fa-fw fa-edit"></i><i class="bi bi-pencil-square"></i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i><i class="bi bi-trash3"></i></button>
                                                 </form>
                                             </td>
                                         </tr>
