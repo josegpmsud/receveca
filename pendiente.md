@@ -1,8 +1,5 @@
 # Aqui se estara agregando la lista de implementaciones pendientes en el proyecto
 
-# Buscador por cedula
-
-- Agregar la opcion de crearlo si no se encuentra
 
 ## Selectores de nacionalidad
 
@@ -61,6 +58,15 @@ V, E ,P, J, G
 ## Manual de usuario
 
 - Realizar paso a paso manual de usuario final
-- Mejorar manual de instalación
+- Mejorar manual de instalacion
+
+
+
+# Implementaciones ya en el proyecto
+
+## Buscador por cedula 
+
+- Al buscar un cliente por su cedula si no se encuentra se habilita un boton para agregar cliente conla cecuda o dato buscado
+
 
 

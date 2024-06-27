@@ -20,6 +20,14 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <img class="mx-auto d-block" src="{{ asset('images/logo.png') }}">
+            </div>
+        </div>
+    </div>
+
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

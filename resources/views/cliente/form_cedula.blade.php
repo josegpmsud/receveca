@@ -1,11 +1,28 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
-
+        {{--
         <div class="form-group mb-2 mb20">
             <label for="nac" class="form-label">{{ __('Nac') }}</label>
             <input type="text" name="nac" class="form-control @error('nac') is-invalid @enderror" value="{{ old('nac', $cliente?->nac) }}" id="nac" placeholder="Nac">
             {!! $errors->first('nac', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+        --}}
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+            <label for="id_nacionalidad" class="form-label">{{ __('nacionalidad Id') }}</label>
+
+              <select id='select'  class="form-control" name="nac">
+                <option selected disabled readonly value="" >--Selecciona el nacionalidad--</option>
+                @foreach($nacionalidads as $nacionalidad)
+                    <option value="{{$nacionalidad['descripcion']}}">{{$nacionalidad['descripcion']}}</option>
+               @endforeach
+              </select>
+            </div>
+          </div>
+
+
+
         <div class="form-group mb-2 mb20">
             <label for="nombre" class="form-label">{{ __('Nombre') }}</label>
             <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value="{{ old('nombre', $cliente?->nombre) }}" id="nombre" placeholder="Nombre">
@@ -21,11 +38,31 @@
             <input type="text" name="cedula_rif" class="form-control @error('cedula_rif') is-invalid @enderror" value="{{ $cedula }}" id="cedula_rif" placeholder="Cedula Rif">
             {!! $errors->first('cedula_rif', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+
+
+        {{--
         <div class="form-group mb-2 mb20">
             <label for="b_nac" class="form-label">{{ __('B Nac') }}</label>
             <input type="text" name="b_nac" class="form-control @error('b_nac') is-invalid @enderror" value="{{ old('b_nac', $cliente?->b_nac) }}" id="b_nac" placeholder="B Nac">
             {!! $errors->first('b_nac', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+        --}}
+
+        <div class="form-row">
+            <div class="form-group col-md-4">
+            <label for="id_nacionalidad" class="form-label">{{ __('nacionalidad Id') }}</label>
+
+              <select id='select'  class="form-control" name="b_nac">
+                <option selected disabled readonly value="" >--Selecciona el nacionalidad--</option>
+                @foreach($nacionalidads as $nacionalidad)
+                    <option value="{{$nacionalidad['descripcion']}}">{{$nacionalidad['descripcion']}}</option>
+               @endforeach
+              </select>
+            </div>
+          </div>
+
+
+
         <div class="form-group mb-2 mb20">
             <label for="b_nombre" class="form-label">{{ __('B Nombre') }}</label>
             <input type="text" name="b_nombre" class="form-control @error('b_nombre') is-invalid @enderror" value="{{ old('b_nombre', $cliente?->b_nombre) }}" id="b_nombre" placeholder="B Nombre">
