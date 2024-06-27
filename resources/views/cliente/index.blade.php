@@ -21,7 +21,7 @@
                                     <input name= "search" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-primary" type="submit" id="button-addon2">Buscar</button>
                                 </div>
-    
+
                             </form>
 
                              <div class="float-right">
@@ -43,7 +43,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 									<th >Nac</th>
 									<th >Nombre</th>
 									<th >Apellido</th>
@@ -60,10 +60,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     @foreach ($clientes as $cliente)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 										<td >{{ $cliente->nac }}</td>
 										<td >{{ $cliente->nombre }}</td>
 										<td >{{ $cliente->apellido }}</td>
@@ -87,6 +88,21 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                    @if ($i<=0)
+
+                                        <div class="float-right">
+
+                                            @php
+                                                $cedula = $_GET['search'];
+                                            @endphp
+
+                                                <a href="{{ route('clientes.create_cedula', $cedula) }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                                    {{ __('Agregar nuevo cliente con la cecula: ' ). $cedula  }}
+                                                </a>
+
+                                          </div>
+                                    @endif
+
                                 </tbody>
                             </table>
                         </div>

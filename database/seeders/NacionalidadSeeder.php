@@ -21,8 +21,6 @@ class NacionalidadSeeder extends Seeder
             "G", // Gubernamental
             "P", // Pasaporte
         ];
-
-
         foreach ($nacionalidads as $nacionalidad) {
             Nacionalidad::create([
                 'descripcion' => $nacionalidad,

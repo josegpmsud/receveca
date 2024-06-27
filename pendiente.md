@@ -1,5 +1,9 @@
 # Aqui se estara agregando la lista de implementaciones pendientes en el proyecto
 
+# Buscador por cedula
+
+- Agregar la opcion de crearlo si no se encuentra
+
 ## Selectores de nacionalidad
 
 V, E ,P, J, G

@@ -43,6 +43,13 @@ class ClienteController extends Controller
         return view('cliente.create', compact('cliente'));
     }
 
+    public function create_cedula($cedula): View
+    {
+        $cliente = new Cliente();
+
+        return view('cliente.create_cedula', compact('cliente','cedula'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -72,7 +79,7 @@ class ClienteController extends Controller
         return view('cliente.show', compact('cliente','vehiculos'));
     }
 
-    
+
 
 
     /**

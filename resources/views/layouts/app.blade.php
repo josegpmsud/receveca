@@ -10,8 +10,11 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
+
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -65,17 +68,24 @@
                         </li>
 
                         <li class="nav-item">
+                            <a class="nav-link" href="{{route('users.index')}}">usuarios</a>
+                        </li>
+                        {{--
+                        <li class="nav-item">
                             <a class="nav-link" href="{{route('usuarios.index')}}">usuarios</a>
                         </li>
+                        --}}
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('plans.index')}}">planes</a>
                                 </li>
                         <li class="nav-item">
                                 <a class="nav-link" href="{{route('marcas.index')}}">marcas</a>
                         </li>
+                        <!--
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('rols.index')}}">roles</a>
                         </li>
+                    -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('tipos.index')}}">tipos</a>
                         </li>
