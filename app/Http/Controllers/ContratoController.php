@@ -23,9 +23,9 @@ class ContratoController extends Controller
         //->with(['plan'])
         ->when(request('search'), function ($query) {
             return $query->where('codigo','LIKE','%' . request('search') .'%')
-            ->orWhere('cobertura','LIKE','%' . request('search') .'%')
+            ->orWhere('cobertura','LIKE','%' . request('search') .'%')->orderBy('codigo','DESC')
             ->orWhereHas('plan', function ($q) {
-                $q->where('descripcion','LIKE','%'. request('search') . '%');
+                $q->where('descripcion','LIKE','%'. request('search') . '%')->orderBy('codigo','DESC');
             });
 
         })
