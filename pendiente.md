@@ -5,7 +5,6 @@
 
 V, E ,P, J, G
 
-
 ## Eliminar migraciones, modelos, relaciones y vistas no utilizadas en el sistema de los siguentes:
 
 - Usuario
@@ -16,7 +15,14 @@ V, E ,P, J, G
 ## Crear crud con vistas de permisos a:
 
 - Role
-- Asignacion de roles a usuarios
+- Asignacion de roles a usuarios al registrase
+- Administrador que pueda cambiar los roles de los usuario
+
+
+## Interfas de usuario para modificar sus credenciales
+
+- Datos de inicio de sesion
+- E informacion de perfil
 
 ## Modificar los permisos y protejer rutas y botones que no esten habilitados para los diferentes roles
 
