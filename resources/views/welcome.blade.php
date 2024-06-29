@@ -117,7 +117,7 @@
                                     <h2 class="text-xl font-semibold text-black dark:text-white">Nuestra Historia</h2>
 
                                     <p class="mt-4 text-sm/relaxed">
-                                        En el corazón de San Cristóbal, nació Receveca, una pequeña empresa de seguros de responsavilidad Civil con un gran sueño: proteger a las personas y a sus vehiculos. Fundada por Alberto Maldonado en 2023, la empresa se ganó la confianza de la comunidad gracias a su atención personalizada, respuesta ágil y compromiso genuino.
+                                        En el año 2007, Alberto Nieto fundó RECEVECA en San Cristóbal, estado Táchira. La empresa nació con la visión de brindar protección y tranquilidad a los conductores y propietarios de vehículos en la región. A lo largo de los años, la empresa se consolidó como un referente en el mercado de seguros de responsabilidad civil vehicular en el estado Táchira. Su compromiso con la atención personalizada y la transparencia la convirtió en la elección preferida de muchos clientes.
                                             <br><br>
                                         Con el tiempo, se transformó en una sólida institución, comprometida con el bienestar de miles de venezolanos. Hoy en día, la empresa continúa su legado, adaptándose a las nuevas necesidades y desafíos del mundo moderno, siempre con la responsabilidad social y la sostenibilidad como estandartes.
                                             <br><br>
