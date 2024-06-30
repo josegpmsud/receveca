@@ -7,6 +7,7 @@ use App\Models\Vehiculo;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClienteRequest;
+use App\Models\Nacionalidad;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
@@ -43,6 +44,14 @@ class ClienteController extends Controller
         return view('cliente.create', compact('cliente'));
     }
 
+    public function create_cedula($cedula): View
+    {
+        $cliente = new Cliente();
+        $nacionalidads = Nacionalidad::all();
+
+        return view('cliente.create_cedula', compact('cliente','cedula','nacionalidads'));
+    }
+
     /**
      * Store a newly created resource in storage.
      */
@@ -72,7 +81,7 @@ class ClienteController extends Controller
         return view('cliente.show', compact('cliente','vehiculos'));
     }
 
-    
+
 
 
     /**

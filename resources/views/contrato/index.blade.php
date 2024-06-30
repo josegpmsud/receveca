@@ -21,7 +21,7 @@
                                     <input name= "search" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-primary" type="submit" id="button-addon2">Buscar</button>
                                 </div>
-    
+
                             </form>
 
                              <div class="float-right">
@@ -43,7 +43,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 									<th >Id Usuario</th>
 									<th >Id Vehiculo</th>
 									<th >Id Plan</th>
@@ -61,7 +61,7 @@
                                     @foreach ($contratos as $contrato)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 										<td >{{ $contrato->id_usuario }}</td>
 										<td >{{ $contrato->vehiculo->placa }}</td>
 										<td >{{ $contrato->plan->descripcion }}</td>
@@ -74,13 +74,13 @@
 
                                             <td>
                                                 <form action="{{ route('contratos.destroy', $contrato->id) }}" method="POST">
-                                                    <a href="{{url('pdf_generator',$contrato->id)}}" target="_blank" class="btn btn-primary">Dowload PDF</a>
+                                                    <a href="{{url('pdf_generator',$contrato->id)}}" target="_blank" class="btn btn-primary">Dowload <i class="bi bi-filetype-pdf"></i></a>
 
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('contratos.show', $contrato->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('contratos.edit', $contrato->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('contratos.show', $contrato->id) }}"><i class="fa fa-fw fa-eye"></i> <i class="bi bi-file-earmark"></i></a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('contratos.edit', $contrato->id) }}"><i class="fa fa-fw fa-edit"></i> <i class="bi bi-pencil-square"></i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i><i class="bi bi-trash3"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -21,7 +21,7 @@
                                     <input name= "search" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
                                     <button class="btn btn-outline-primary" type="submit" id="button-addon2">Buscar</button>
                                 </div>
-    
+
                             </form>
 
                              <div class="float-right">
@@ -43,7 +43,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 									<th >Nac</th>
 									<th >Nombre</th>
 									<th >Apellido</th>
@@ -60,10 +60,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                     @foreach ($clientes as $cliente)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 										<td >{{ $cliente->nac }}</td>
 										<td >{{ $cliente->nombre }}</td>
 										<td >{{ $cliente->apellido }}</td>
@@ -78,15 +79,31 @@
 
                                             <td>
                                                 <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show', $cliente->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit', $cliente->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show', $cliente->id) }}"><i class="fa fa-fw fa-eye"></i> <i class="bi bi-file-earmark"></i></a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit', $cliente->id) }}"><i class="fa fa-fw fa-edit"></i><i class="bi bi-pencil-square"></i></a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i><i class="bi bi-trash3"></i>
+                                                        </button>
                                                 </form>
                                             </td>
                                         </tr>
                                     @endforeach
+                                    @if ($i<=0)
+
+                                        <div class="float-right">
+
+                                            @php
+                                                $cedula = $_GET['search'];
+                                            @endphp
+
+                                                <a href="{{ route('clientes.create_cedula', $cedula) }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                                    {{ __('Agregar nuevo cliente con la cecula: ' ). $cedula  }}
+                                                </a>
+
+                                          </div>
+                                    @endif
+
                                 </tbody>
                             </table>
                         </div>

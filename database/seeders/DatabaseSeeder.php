@@ -14,7 +14,6 @@ use App\Models\Uso;
 use App\Models\Vehiculo;
 use App\Models\Color;
 
-
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +25,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            
+            NacionalidadSeeder::class,
             ClaseSeeder::class,
             ColorSeeder::class,
             MarcaSeeder::class,
@@ -40,10 +39,9 @@ class DatabaseSeeder extends Seeder
             ClienteSeeder::class,
             VehiculoSeeder::class,
             ContratoSeeder::class,
-            
         ]);
 
-        
-        
+
+
     }
 }

@@ -1,3 +1,83 @@
+# Instrucciones de implementacion del proyecto
+
+El Proyecto esta desarrollado en Laravel 11.10 y Php 8.2.0
+(Tener en cuenta los requisitos para que lo puedas manipular como desarrollador)
+
+Cuando el proyecto este en produccion solo de debe tener instalado un navegador Web de su prefecrencia para utilizar el sistema.
+
+## Requisitos previos para la instalacion
+
+- Tener instalado un servidor local como XAMPP
+- Tener instalado una version de php 8.2.0 o superior
+- Tener instalado git ultima version disponible
+- Tener instalado composer ultima version
+- Tener instalado node.js ultima version 
+- Tener instalado un editor de codigo como Visual Code
+
+## Guia de instalación
+
+- Clona el repositorio con git de la rama master, (Lo puedes guardar en la carpeta htdoc si utilizas XAMPP)
+Ejecuta los comando desde una terminal cmd
+
+`git clone https://github.com/josegpmsud/receveca.git`
+
+
+### Luego ingresa a la carpeta del proyecto desde la misma terminal cmd
+
+`cd receveca`
+
+### ahora realiza lo siguiente:
+
+- Crea una nueva rama con el nombre que le desea dar: "newbranch" de esta manera 
+
+`git branch newbranch`
+
+- Ejecuta el comando desde una terminal: 
+
+`npm install`
+
+- Luego ejecuta el comando desde otra terminal sin cerrar la primera:
+
+`composer install`
+
+- Luego enciende los servicios de MySql y Apache
+
+- Luego ejecutas desde otra terminal las migraciones con el siguiente comando:
+
+`php artisan migrate`
+
+- luego ejecuta los seeders con el siguiente comando (esto es para cargar la base de datos con registros de prueba para nuestra aplicacion)
+
+`php artisan migrate:fresh --seed`
+
+- Por defecto se han creado 3 usuarios
+
+"admin@admin" que tiene permisos de admin <br>
+"asesor@asesor" que tiene permisos de asesor <br>
+"cliente@cliente" que tiene permisos de cliente <br>
+
+todos tienen la misma contraseña, es esta: "12345678"
+
+### ahora para activiar el serviror y las dependencias en una terminal ejecutamos
+
+`npm rum dev`
+
+### ahora en otra terminal
+
+`php artisan serve`
+
+### ahora ingresa donde esta corriendo la apliacacion desde un navegador web normalmente seria
+
+`http://127.0.0.1:8000`
+
+
+
+### Felicitaciones ya tienes corriendo el proyecto ahora puedes revisarlo y anotar notas las mejora que aun estan pendientes por desarrollo. siente libre de hacer las mejoras en tu rama y hacer tus susgerencias.
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

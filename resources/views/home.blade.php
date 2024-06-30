@@ -15,13 +15,13 @@
                         </div>
                     @endif
 
-                    {{ __('Servicio') }}
-                        
-                    
-                    
+                    {{ __('Bienvenido') }}
+
+
+
                 </div>
-            </div>  
- 
+            </div>
+
         </div>
     </div>
 </div>

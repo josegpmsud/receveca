@@ -19,15 +19,15 @@ class ContratoController extends Controller
      */
     public function index(Request $request): View
     {
-        $contratos = Contrato::query()  
+        $contratos = Contrato::query()
         //->with(['plan'])
         ->when(request('search'), function ($query) {
             return $query->where('codigo','LIKE','%' . request('search') .'%')
-            ->orWhere('cobertura','LIKE','%' . request('search') .'%')
+            ->orWhere('cobertura','LIKE','%' . request('search') .'%')->orderBy('codigo','DESC')
             ->orWhereHas('plan', function ($q) {
-                $q->where('descripcion','LIKE','%'. request('search') . '%');
+                $q->where('descripcion','LIKE','%'. request('search') . '%')->orderBy('codigo','DESC');
             });
-            
+
         })
         ->paginate();
 
@@ -41,7 +41,7 @@ class ContratoController extends Controller
     public function create(): View
     {
         $contrato = new Contrato();
-        $plans = Plan::all();       
+        $plans = Plan::all();
 
         return view('contrato.create', compact('contrato','plans'));
     }
@@ -49,7 +49,7 @@ class ContratoController extends Controller
     public function create_vehiculo($id): View
     {
         $contrato = new Contrato();
-        $plans = Plan::all();       
+        $plans = Plan::all();
 
         return view('contrato.create_vehiculo', compact('contrato','plans','id'));
     }
@@ -68,6 +68,7 @@ class ContratoController extends Controller
     /**
      * Display the specified resource.
      */
+
     public function show($id): View
     {
         $contrato = Contrato::find($id);
@@ -106,22 +107,22 @@ class ContratoController extends Controller
     }
 
     public function pdf_generator_get($id){
-        
+
         //echo 'PDF'; die();
-        
+
         //$contratos = Contrato::get();
         $contrato = Contrato::find($id);
         $data = [
             'title' => 'Contrato',
             'date' => date('Y-m-d'),
-            'contrato' => $contrato           
-            
+            'contrato' => $contrato
+
         ];
 
 
         $pdf = PDF::loadView('contrato.myPDF', $data);
         //return $pdf->download('lista_post.pdf');
         return $pdf->stream('lista_post.pdf');
-        
+
     }
 }
