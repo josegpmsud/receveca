@@ -1,5 +1,9 @@
 # Aqui se estara agregando la lista de implementaciones pendientes en el proyecto
 
+# En la vista Welcome
+
+- Mejorar imagenes e informacion sobre el seguro
+- Eliminar enlaces a sitios de laravel que no se necesitan
 
 ## Selectores de nacionalidad
 
