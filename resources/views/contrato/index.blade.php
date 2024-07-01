@@ -24,9 +24,24 @@
 
                             </form>
 
+                            <form method="GET">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="fecha_inicio">Fecha de inicio:</label>
+                                    <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" >
+                                </div>
+                                <div class="form-group">
+                                    <label for="fecha_fin">Fecha fin:</label>
+                                    <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" >
+                                </div>
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </form>
+
                              <div class="float-right">
+
+
                                 <a href="{{ route('contratos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear contrato') }}
                                 </a>
                               </div>
                         </div>
@@ -58,6 +73,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
+                                    @php
+                                        $i=0;
+                                    @endphp
                                     @foreach ($contratos as $contrato)
                                         <tr>
                                             <td>{{ ++$i }}</td>
@@ -85,6 +104,11 @@
                                             </td>
                                         </tr>
                                     @endforeach
+                                    {{--
+                                    @foreach ($contratos as $contrato)
+                                        <li>{{ $contrato->fecha_ini }} - {{ $contrato->codigo }}</li>
+                                    @endforeach
+                                    --}}
                                 </tbody>
                             </table>
                         </div>

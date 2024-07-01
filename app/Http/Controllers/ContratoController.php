@@ -10,7 +10,7 @@ use App\Models\Plan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Barryvdh\DomPDF\Facade\Pdf;
-
+use Carbon\Carbon;
 
 class ContratoController extends Controller
 {
@@ -33,6 +33,22 @@ class ContratoController extends Controller
 
         return view('contrato.index', compact('contratos'))
             ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
+    }
+
+    public function filtrar(Request $request): View
+    {
+        $fechaInicio = $request->input('fecha_inicio');
+        $fechaFin = $request->input('fecha_fin');
+
+        $contratos = Contrato::where('fecha_ini', '>=', $fechaInicio)
+        ->where('fecha_ini', '<=', $fechaFin)
+        ->get();
+
+
+        //$contratos = Contrato::whereBetween('fecha_ini', [$fechaInicio, $fechaFin])->get();
+
+        return view('contrato.index', compact('contratos'))
+            ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());;
     }
 
     /**

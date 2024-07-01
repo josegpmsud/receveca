@@ -34,5 +34,11 @@ Route::get('/contratos/create/{id}', [App\Http\Controllers\ContratoController::c
 Route::get('/vehiculos/create/{id}', [App\Http\Controllers\VehiculoController::class, 'create_cliente'])->middleware('can:admin')->name('vehiculos.create_cliente');
 Route::get('/clientes/create/{cedula}', [App\Http\Controllers\ClienteController::class, 'create_cedula'])->middleware('can:admin')->name('clientes.create_cedula');
 
+//Route::get('/contratos/filtrado/{id}', [App\Http\Controllers\ContratoController::class, 'indexFilter'])->middleware('can:admin')->name('contratos.indexFilter');
+
+Route::get('/contratos/filtrar', [App\Http\Controllers\ContratoController::class, 'filtrar'])->name('contratos.filtrar');
+
+//Route::get('/pedidos/filtrar', [PedidosController::class, 'filtrar'])->name('pedidos.filtrar');
+
 
 Route::get('pdf_generator/{id}', [App\Http\Controllers\ContratoController::class,'pdf_generator_get']);
