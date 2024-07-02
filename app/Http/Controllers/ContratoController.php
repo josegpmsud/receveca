@@ -21,7 +21,7 @@ class ContratoController extends Controller
     public function index(Request $request): View
     {
 
-        $contratos = Contrato::query()
+        $contratos = Contrato::query()->orderByDesc('id')
         //->with(['plan'])
         ->when(request('search'), function ($query) {
             return $query->where('codigo','LIKE','%' . request('search') .'%')

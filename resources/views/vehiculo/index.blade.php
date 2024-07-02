@@ -16,6 +16,14 @@
                                 {{ __('Vehiculos') }}
                             </span>
 
+                            <form method="GET">
+                                <div class="input-group mb-3">
+                                    <input name= "search" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Buscar</button>
+                                </div>
+
+                            </form>
+
                              <div class="float-right">
                                 {{--
                                 <a href="{{ route('vehiculos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">

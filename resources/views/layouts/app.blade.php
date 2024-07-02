@@ -64,7 +64,7 @@
                             <a class="nav-link" href="{{route('clientes.index')}}">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('vehiculos.index')}}">vehiculos</a>
+                            <a class="nav-link" href="{{route('vehiculos.index')}}">Vehiculos</a>
                         </li>
 
                         <li class="nav-item">
