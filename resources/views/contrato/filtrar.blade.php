@@ -29,13 +29,12 @@
                                 <div class="form-group">
                                     <label for="fecha_inicio">Fecha de inicio:</label>
                                     <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" >
+                                </div>
+                                <div class="form-group">
                                     <label for="fecha_fin">Fecha fin:</label>
                                     <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" >
-                                    <button type="submit" class="btn btn-primary">Buscar</button>
-
                                 </div>
-
-
+                                <button type="submit" class="btn btn-primary">Buscar</button>
                             </form>
 
                              <div class="float-right">

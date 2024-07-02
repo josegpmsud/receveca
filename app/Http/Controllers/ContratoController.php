@@ -19,20 +19,23 @@ class ContratoController extends Controller
      */
     public function index(Request $request): View
     {
+
         $contratos = Contrato::query()
         //->with(['plan'])
         ->when(request('search'), function ($query) {
             return $query->where('codigo','LIKE','%' . request('search') .'%')
-            ->orWhere('cobertura','LIKE','%' . request('search') .'%')->orderBy('codigo','DESC')
+            ->orWhere('cobertura','LIKE','%' . request('search') .'%')
+            ->orWhere('fecha_ini','LIKE','%' . request('search') .'%')
+            ->orWhere('fecha_fin','LIKE','%' . request('search') .'%')
             ->orWhereHas('plan', function ($q) {
-                $q->where('descripcion','LIKE','%'. request('search') . '%')->orderBy('codigo','DESC');
+                $q->where('descripcion','LIKE','%'. request('search') . '%');
             });
-
         })
         ->paginate();
 
         return view('contrato.index', compact('contratos'))
             ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
+
     }
 
     public function filtrar(Request $request): View
@@ -41,8 +44,8 @@ class ContratoController extends Controller
         $fechaFin = $request->input('fecha_fin');
 
         $contratos = Contrato::where('fecha_ini', '>=', $fechaInicio)
-        ->where('fecha_ini', '<=', $fechaFin)
-        ->get();
+            ->where('fecha_ini', '<=', $fechaFin)
+            ->get();
 
 
         //$contratos = Contrato::whereBetween('fecha_ini', [$fechaInicio, $fechaFin])->get();
