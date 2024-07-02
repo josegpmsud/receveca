@@ -24,14 +24,14 @@
 
                             </form>
 
-                            <form method="GET" action="{{route('contratos.filtrar')}}">
+                            <form method="GET" action="{{route('filtro')}}">
                                 {{--@csrf--}}
                                 <div class="form-group">
-                                    <label for="fecha_inicio">Fecha de inicio:</label>
-                                    <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" >
-                                    <label for="fecha_fin">Fecha fin:</label>
-                                    <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" >
-                                    <button type="submit" class="btn btn-primary">Buscar</button>
+                                    <label for="start_date">Fecha de inicio:</label>
+                                    <input type="date" class="form-control" id="start_date" name="start_date" >
+                                    <label for="end_date">Fecha fin:</label>
+                                    <input type="date" class="form-control" id="end_date" name="end_date" >
+                                    <button type="submit" class="btn btn-primary">Filtrar</button>
 
                                 </div>
 

@@ -12,6 +12,7 @@ use Illuminate\View\View;
 use Barryvdh\DomPDF\Facade\Pdf;
 use Carbon\Carbon;
 
+
 class ContratoController extends Controller
 {
     /**
@@ -38,20 +39,33 @@ class ContratoController extends Controller
 
     }
 
-    public function filtrar(Request $request): View
+    public function filter(Request $request)
     {
-        $fechaInicio = $request->input('fecha_inicio');
-        $fechaFin = $request->input('fecha_fin');
+        // $fechaInicio = $request->input('fecha_inicio');
+        // $fechaFin = $request->input('fecha_fin');
 
-        $contratos = Contrato::where('fecha_ini', '>=', $fechaInicio)
-            ->where('fecha_ini', '<=', $fechaFin)
-            ->get();
+        // $contratos = Contrato::where('fecha_ini', '>=', $fechaInicio)
+        //     ->where('fecha_ini', '<=', $fechaFin)
+        //     ->get();
 
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
 
-        //$contratos = Contrato::whereBetween('fecha_ini', [$fechaInicio, $fechaFin])->get();
+        $contratos = Contrato::whereBetween('created_at', [$start_date, $end_date])->get();
 
+        // return view('contrato.index', compact('contratos'))
+        //     ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
+/*
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+
+        $contratos = Contrato::whereDate('created_at', '>=', $start_date)
+                            ->whereDate('created_at', '<=', $end_date)
+                            ->get();
+    */
         return view('contrato.index', compact('contratos'))
-            ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());;
+        ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
+;
     }
 
     /**
