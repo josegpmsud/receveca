@@ -9,25 +9,32 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <title>Contrato PDF</title>
+    <style>
+        h6{ text-align: center;  }
+        .salto{ height: 3cm;}
+    </style>
   </head>
   <body>
 
     {{-- <h1>{{ $title }}</h1>
     <p>{{ $date }}</p> --}}
+    <div class="salto">
 
-    <h2>Contrato</h2>
+    </div>
+
+    <h6>CONTRATO DE GARANTIAS DE DAÑOS A TERCEROS</h6>
 
     Nro: {{$contrato->codigo}} <br>
     Vigencia: desde {{$contrato->fecha_ini}} hasta {{$contrato->fecha_fin}} <br>
-
-    <h2>Cliente</h2>
+    <hr>
+    <h6>DATOS DEL AFILIADO</h6>
 
     Cedula: {{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}} <br>
     Nombre: {{$contrato->vehiculo->cliente->nombre}} {{$contrato->vehiculo->cliente->apellido}} <br>
 
     Dirección: {{$contrato->vehiculo->cliente->direccion}} <br>
-
-    <h2>Vehiculo</h2>
+    <hr>
+    <h6>DATOS DEL VEHICULO</h6>
     <table>
         <tr>
             <td>
@@ -49,58 +56,81 @@
             </td>
         </tr>
     </table>
+    <hr>
+    <h6>MONTO DE RESPONSABILIDAD</h6>
+    <table>
+        <tr>
 
-    <h3>Poliza contratada</h3>
+            <td>
+                Terceros: <br>
+                Muerte {{$contrato->plan->ter_muerte}} Bs <br>
+                Invalidez {{$contrato->plan->ter_invalidez}} Bs <br>
+                Medicos {{$contrato->plan->ter_medicos}} Bs <br>
+            </td>
+            <td>
+                Ocupantes: <br>
+                Muerte {{$contrato->plan->ocu_muerte}} Bs <br>
+                Invalidez {{$contrato->plan->ocu_invalidez}} Bs <br>
+                Medicos {{$contrato->plan->ocu_medicos}} Bs <br>
+            </td>
+            <td>
+                Otros: <br>
+                Daños {{$contrato->plan->danos}} Bs <br>
+                Materiales {{$contrato->plan->materiales}} Bs <br>
+                Legal {{$contrato->plan->legal}} Bs <br>
+                Limites {{$contrato->plan->limites}} Bs <br>
+            </td>
+            <td>
+                Funerarios {{$contrato->plan->funerarios}} Bs <br>
+                Grua {{$contrato->plan->grua}} Bs <br>
+                Indemnizacion {{$contrato->plan->indem}} Bs <br>
+                Extraterritorial {{$contrato->plan->extra}} Bs <br>
+            </td>
 
-
-    <table class="table table-bordered table-striped">
-
-        <tbody>
-                <tr>
-
-                  <tr>
-                    <td colspan="3">Terceros</td>
-                  </tr>
-                  <tr>
-                    <td>Muerte<br> {{$contrato->plan->ter_muerte}} Bs</td>
-                    <td>Invalidez<br> {{$contrato->plan->ter_invalidez}} Bs</td>
-                    <td>Medicos<br> {{$contrato->plan->ter_medicos}} Bs</td>
-                  </tr>
-                  <tr>
-                    <td>Ocupantes</td>
-                  </tr>
-                  <tr>
-                    <td>Muerte<br> {{$contrato->plan->ocu_muerte}} Bs</td>
-                    <td>Invalidez<br> {{$contrato->plan->ocu_invalidez}} Bs</td>
-                    <td>Medicos<br> {{$contrato->plan->ocu_medicos}} Bs</td>
-                  </tr>
-                  <tr>
-                    <td>Otros</td>
-                  </tr>
-                  <tr>
-                    <td>Daños<br> {{$contrato->plan->danos}} Bs</td>
-                    <td>Materiales<br> {{$contrato->plan->materiales}} Bs</td>
-                    <td>Legal<br> {{$contrato->plan->legal}} Bs</td>
-                    <td>Limites<br> {{$contrato->plan->limites}} Bs</td>
-                  </tr>
-                  <tr>
-                    <td>Funerarios<br> {{$contrato->plan->funerarios}} Bs</td>
-                    <td>Grua<br> {{$contrato->plan->grua}} Bs</td>
-                    <td>Indemnizacion<br> {{$contrato->plan->indem}} Bs</td>
-                    <td>Extraterritoria<br> {{$contrato->plan->extra}} Bs</td>
-                  </tr>
-
-                </tr>
-
-        </tbody>
-
+        </tr>
     </table>
 
-    <h2>Factura</h2>
+    Monto Maximo de Cobertura: <br>
+    <hr>
+    <table>
+        <tr>
+            <td>
+                <strong>Monto Total de la base imponible al valor agregado:</strong>
+            </td>
+            <td>
+                Bs
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Monto Total del Impuesto al valor agregado 16%:</strong>
+            </td>
+            <td>
+                Bs
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Valor Total de la Venta:</strong>
+            </td>
+            <td>
+                Bs
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <p>
+        <em>Para la validez de este contrato se require la firma y sello de la persona autorizada por la empresa
+        </em>
+    </p>
 
-    <h2>Copia Factura</h2>
 
-    <h2>Carnet</h2>
+
+    <h6>Factura</h6>
+
+    <h6>Copia Factura</h6>
+
+    <h6>Carnet</h6>
 
   </body>
 </html>
