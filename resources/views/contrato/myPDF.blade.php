@@ -11,36 +11,55 @@
     <title>Contrato PDF</title>
   </head>
   <body>
-    <h1>{{ $title }}</h1>
-    <p>{{ $date }}</p>
+
+    {{-- <h1>{{ $title }}</h1>
+    <p>{{ $date }}</p> --}}
+
+    <h2>Contrato</h2>
+
+    Nro: {{$contrato->codigo}} <br>
+    Vigencia: desde {{$contrato->fecha_ini}} hasta {{$contrato->fecha_fin}} <br>
+
+    <h2>Cliente</h2>
+
+    Cedula: {{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}} <br>
+    Nombre: {{$contrato->vehiculo->cliente->nombre}} {{$contrato->vehiculo->cliente->apellido}} <br>
+
+    Dirección: {{$contrato->vehiculo->cliente->direccion}} <br>
+
+    <h2>Vehiculo</h2>
+    <table>
+        <tr>
+            <td>
+                Marca: {{$contrato->vehiculo->marca->descripcion}} <br>
+                Clase: {{$contrato->vehiculo->clase->descripcion}} <br>
+                Color: {{$contrato->vehiculo->color->descripcion}} <br>
+                Tipo: {{$contrato->vehiculo->tipo->descripcion}} <br>
+                Uso: {{$contrato->vehiculo->uso->descripcion}} <br>
+            </td>
+
+
+            <td>
+                Placa: {{$contrato->vehiculo->placa}} <br>
+                Año: {{$contrato->vehiculo->ano}} <br>
+                Peso: {{$contrato->vehiculo->peso}} <br>
+                Serial Motor: {{$contrato->vehiculo->serial_motor}} <br>
+                Puestos: {{$contrato->vehiculo->puestos}} <br>
+                Serial NIV: {{$contrato->vehiculo->serial_niv}} <br>
+            </td>
+        </tr>
+    </table>
+
+    <h3>Poliza contratada</h3>
+
+
     <table class="table table-bordered table-striped">
-        <thead>
-            <tr>
-                <th>Nro</th>
-                <th>Cliente</th>                
-                <th>Pago</th>
-                <th>Cobertura</th>
-                <th>Placa vehiculo</th>
-            </tr>
-        </thead>  
+
         <tbody>
-            
                 <tr>
-                  <td>{{$contrato->codigo}}</td>
-                  <td>Vigencia desde {{$contrato->fecha_ini}} hasta {{$contrato->fecha_fin}}</td>
-                  
-                  <td>{{$contrato->vehiculo->cliente->nombre}} {{$contrato->vehiculo->cliente->apellido}}</td>
-                  <td>{{$contrato->pago}}</td>
-                  <td>{{$contrato->cobertura}}</td>
-                  <td>{{$contrato->vehiculo->placa}}</td>
-                </tr>
-                <tr>
-                  <td>Poliza contratada</td>                  
-                </tr>
-                <tr>
-                  <td>Valor: {{$contrato->plan->valor}} Bs</td>
+
                   <tr>
-                    <td>Terceros</td>
+                    <td colspan="3">Terceros</td>
                   </tr>
                   <tr>
                     <td>Muerte<br> {{$contrato->plan->ter_muerte}} Bs</td>
@@ -53,7 +72,7 @@
                   <tr>
                     <td>Muerte<br> {{$contrato->plan->ocu_muerte}} Bs</td>
                     <td>Invalidez<br> {{$contrato->plan->ocu_invalidez}} Bs</td>
-                    <td>Medicos<br> {{$contrato->plan->ocu_medicos}} Bs</td>         
+                    <td>Medicos<br> {{$contrato->plan->ocu_medicos}} Bs</td>
                   </tr>
                   <tr>
                     <td>Otros</td>
@@ -70,18 +89,19 @@
                     <td>Indemnizacion<br> {{$contrato->plan->indem}} Bs</td>
                     <td>Extraterritoria<br> {{$contrato->plan->extra}} Bs</td>
                   </tr>
-                  
-                           
+
                 </tr>
-                
-                <tr>
-                  <td>Cobertura total: </td>
-                </tr>
-                
-            
+
         </tbody>
 
     </table>
+
+    <h2>Factura</h2>
+
+    <h2>Copia Factura</h2>
+
+    <h2>Carnet</h2>
+
   </body>
 </html>
 

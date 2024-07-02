@@ -7,7 +7,7 @@
 
 # Terminar vista pdf de impresion
 
-- incluir todos los campos 
+- incluir todos los campos
 - Agregar contrato
 - Agregar Faltura
 - Agregar copia Factura
@@ -88,7 +88,7 @@ V, E ,P, J, G
 
 # Implementaciones ya en el proyecto
 
-## Buscador por cedula 
+## Buscador por cedula
 
 - Al buscar un cliente por su cedula si no se encuentra se habilita un boton para agregar cliente conla cecuda o dato buscado
 
