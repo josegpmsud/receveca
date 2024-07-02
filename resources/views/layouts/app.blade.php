@@ -67,16 +67,14 @@
                             <a class="nav-link" href="{{route('vehiculos.index')}}">vehiculos</a>
                         </li>
 
-
-
-                        @can('admin')
-
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contratos.index')}}">Contratos</a>
                         </li>
 
+                        @can('admin')
+
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('users.index')}}">usuarios</a>
+                            <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
                         </li>
                         {{--
                         <li class="nav-item">
@@ -84,10 +82,10 @@
                         </li>
                         --}}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('plans.index')}}">planes</a>
+                            <a class="nav-link" href="{{route('plans.index')}}">Planes</a>
                                 </li>
                         <li class="nav-item">
-                                <a class="nav-link" href="{{route('marcas.index')}}">marcas</a>
+                                <a class="nav-link" href="{{route('marcas.index')}}">Marcas</a>
                         </li>
                         <!--
                         <li class="nav-item">
@@ -95,10 +93,10 @@
                         </li>
                     -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('tipos.index')}}">tipos</a>
+                            <a class="nav-link" href="{{route('tipos.index')}}">Tipos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('usos.index')}}">usos</a>
+                            <a class="nav-link" href="{{route('usos.index')}}">Usos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('colors.index')}}">Colores</a>
@@ -106,16 +104,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('clases.index')}}">Clases</a>
                         </li>
-                        <li class="nav-item">
-
-
                         @endcan
 
-
-
-
-                            <a class="nav-link" href="{{route('contratos.index')}}">Informes</a>
-                        </li>
 
 
                             <li class="nav-item dropdown">

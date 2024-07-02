@@ -46,12 +46,12 @@ class ContratoController extends Controller
 
         // $contratos = Contrato::where('fecha_ini', '>=', $fechaInicio)
         //     ->where('fecha_ini', '<=', $fechaFin)
-        //     ->get();
+        //     ->paginate();
 
         $start_date = $request->start_date;
         $end_date = $request->end_date;
 
-        $contratos = Contrato::whereBetween('created_at', [$start_date, $end_date])->get();
+        $contratos = Contrato::whereBetween('fecha_ini', [$start_date, $end_date])->paginate();
 
         // return view('contrato.index', compact('contratos'))
         //     ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
@@ -61,11 +61,12 @@ class ContratoController extends Controller
 
         $contratos = Contrato::whereDate('created_at', '>=', $start_date)
                             ->whereDate('created_at', '<=', $end_date)
-                            ->get();
+                            ->paginate();
     */
         return view('contrato.index', compact('contratos'))
         ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
-;
+
+
     }
 
     /**

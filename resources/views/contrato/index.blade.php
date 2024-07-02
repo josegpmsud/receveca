@@ -19,19 +19,43 @@
                             <form method="GET">
                                 <div class="input-group mb-3">
                                     <input name= "search" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
-                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Buscar</button>
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
                                 </div>
 
                             </form>
 
+
+
+
                             <form method="GET" action="{{route('filtro')}}">
                                 {{--@csrf--}}
+
+                                <div class="row g-3">
+                                    <div class="col-sm">
+                                        <label for="start_date">Fecha de inicio</label>
+                                        <input type="date" class="form-control" id="start_date" name="start_date" >
+                                </div>
+                                    <div class="col-sm">
+                                        <label for="end_date">Fecha fin</label>
+                                        <input type="date" class="form-control" id="end_date" name="end_date" >
+                                    </div>
+                                    <div class="col-sm">
+                                        <label>Filtar</label><br>
+                                        <button type="submit" class="btn btn-primary"><i class="bi bi-funnel"></i></button>
+                                    </div>
+                                  </div>
+
+
+
                                 <div class="form-group">
-                                    <label for="start_date">Fecha de inicio:</label>
-                                    <input type="date" class="form-control" id="start_date" name="start_date" >
-                                    <label for="end_date">Fecha fin:</label>
-                                    <input type="date" class="form-control" id="end_date" name="end_date" >
-                                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                                    <div>
+
+
+                                    </div>
+                                    <div>
+
+                                    </div>
+
 
                                 </div>
 
@@ -40,10 +64,11 @@
 
                              <div class="float-right">
 
-
+                                {{--
                                 <a href="{{ route('contratos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear contrato') }}
                                 </a>
+                                --}}
                               </div>
                         </div>
                     </div>

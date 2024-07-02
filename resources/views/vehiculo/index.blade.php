@@ -17,9 +17,11 @@
                             </span>
 
                              <div class="float-right">
+                                {{--
                                 <a href="{{ route('vehiculos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear contrato') }}
                                 </a>
+                                --}}
                               </div>
                         </div>
                     </div>
