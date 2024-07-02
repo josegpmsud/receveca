@@ -1,6 +1,6 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
-        
+
         <div class="form-group mb-2 mb20">
             <label for="id_usuario" class="form-label">{{ __('') }}</label>
             <input type="hidden" name="id_usuario" class="form-control @error('id_usuario') is-invalid @enderror" value="{{ Auth::user()->id }}" id="id_usuario" placeholder="Id Usuario">
@@ -18,12 +18,12 @@
                 {!! $errors->first('id_plan', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
             </div>
         --}}
-        
+
 
         <div class="form-row">
             <div class="form-group col-md-4">
             <label for="id_plan" class="form-label">{{ __('Plan Id') }}</label>
-        
+
               <select id='select'  class="form-control" name="id_plan">
                 <option selected disabled readonly value="{{ old('id_plan', $contrato?->id_plan) }}" >--Selecciona el plan--</option>
                 @foreach($plans as $plan)
@@ -46,31 +46,32 @@
             {!! $errors->first('fecha_fin', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
     --}}
-          
-        
+
+
         <div class="form-group mb-2 mb20">
             <label for="codigo" class="form-label">{{ __('Codigo') }}</label>
             <input type="text" name="codigo" class="form-control @error('codigo') is-invalid @enderror" value="{{ old('codigo', $contrato?->codigo) }}" id="codigo" placeholder="Codigo">
             {!! $errors->first('codigo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
+
         <div class="form-group mb-2 mb20">
             <label for="cobertura" class="form-label">{{ __('Cobertura') }}</label>
-            <input type="text" name="cobertura" class="form-control @error('cobertura') is-invalid @enderror" value="{{ old('cobertura', $contrato?->cobertura) }}" id="cobertura" placeholder="Cobertura">
+            <input type="hidden" name="cobertura" class="form-control @error('cobertura') is-invalid @enderror" value="{{ old('cobertura', $contrato?->cobertura) }}" id="cobertura" placeholder="Cobertura">
             {!! $errors->first('cobertura', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="pago" class="form-label">{{ __('Pago') }}</label>
-            <input type="text" name="pago" class="form-control @error('pago') is-invalid @enderror" value="{{ old('pago', $contrato?->pago) }}" id="pago" placeholder="Pago">
+            <input type="hidden" name="pago" class="form-control @error('pago') is-invalid @enderror" value="{{ old('pago', $contrato?->pago) }}" id="pago" placeholder="Pago">
             {!! $errors->first('pago', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
-        
+
         <div class="form-group mb-2 mb20">
             <label for="estado" class="form-label">{{ __('') }}</label>
             <input type="hidden" name="estado" class="form-control @error('estado') is-invalid @enderror" value="1" id="estado" placeholder="Estado">
             {!! $errors->first('estado', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
-        
-        
+
+
 
     </div>
     <div class="col-md-12 mt20 mt-2">

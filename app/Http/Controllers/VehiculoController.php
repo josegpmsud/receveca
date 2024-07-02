@@ -30,7 +30,13 @@ class VehiculoController extends Controller
         $vehiculos = Vehiculo::query()->orderByDesc('id')
         //->with(['plan'])
         ->when(request('search'), function ($query) {
-            return $query->where('placa','LIKE','%' . request('search') .'%');
+            return $query->where('placa','LIKE','%' . request('search') .'%')
+            ->orWhereHas('cliente', function ($q) {
+                $q->where('nombre','LIKE','%'. request('search') . '%');
+            })
+            ->orWhereHas('cliente', function ($q) {
+                $q->where('apellido','LIKE','%'. request('search') . '%');
+            });
         })
         ->paginate();
 

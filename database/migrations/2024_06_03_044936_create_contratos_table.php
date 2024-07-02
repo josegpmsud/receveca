@@ -40,12 +40,12 @@ return new class extends Migration
             $table->date('fecha_ini')->default(now());
             $table->date('fecha_fin')->default(now()->addYear());
 
-            $table->integer('codigo')->unique();        
-            $table->float('cobertura');
-            $table->float('pago');
-            
+            $table->integer('codigo')->unique();
+            $table->float('cobertura')->default(10000);
+            $table->float('pago')->default(100);
+
             $table->tinyInteger('estado')->default(1);
-            
+
             $table->timestamps();
         });
     }
