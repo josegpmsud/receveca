@@ -12,6 +12,7 @@
     <style>
         h6{ text-align: center;  }
         .salto{ height: 3cm;}
+
     </style>
   </head>
   <body>
@@ -29,10 +30,14 @@
     <hr>
     <h6>DATOS DEL AFILIADO</h6>
 
-    Cedula: {{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}} <br>
-    Nombre: {{$contrato->vehiculo->cliente->nombre}} {{$contrato->vehiculo->cliente->apellido}} <br>
+    Nombre y Apellido: {{$contrato->vehiculo->cliente->nombre}} {{$contrato->vehiculo->cliente->apellido}} <br>
+    Cédula/RIF: {{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}} <br>
+    Teléfono: {{$contrato->vehiculo->cliente->telefono}}  <br>
+    Dirección: {{$contrato->vehiculo->cliente->direccion}}  <br>
 
-    Dirección: {{$contrato->vehiculo->cliente->direccion}} <br>
+    Beneficiario: {{$contrato->vehiculo->cliente->b_nombre}} {{$contrato->vehiculo->cliente->b_apellido}} <br>
+    Cédula/RIF: {{$contrato->vehiculo->cliente->b_nac}} {{$contrato->vehiculo->cliente->b_cedula}} <br>
+
     <hr>
     <h6>DATOS DEL VEHICULO</h6>
     <table>
@@ -124,9 +129,25 @@
         </em>
     </p>
 
+    <div class="salto">
+
+    </div>
+
+    <h6>Factura {{$contrato->fecha_ini}}</h6>
+    <table>
+        <tr>
+            <td>
+                <tr><td>Apellidos y nombres:</td><td>{{$contrato->vehiculo->cliente->apellido}} {{$contrato->vehiculo->cliente->nombre}}</td></tr>
+                <tr><td>C.I/R.I.F:</td><td>{{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}}</td></tr>
+                <tr><td>Descripción:</td><td>Pago del contrato Nro: {{$contrato->codigo}} </td></tr>
+                <tr><td>Teléfono:</td><td>{{$contrato->vehiculo->cliente->telefono}}</td></tr>
+                <tr><td>Placa:</td><td>{{$contrato->vehiculo->placa}}</td></tr>
+            </td>
+
+        </tr>
 
 
-    <h6>Factura</h6>
+    </table>
 
     <h6>Copia Factura</h6>
 
