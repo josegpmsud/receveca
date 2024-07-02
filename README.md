@@ -3,7 +3,7 @@
 El Proyecto esta desarrollado en Laravel 11.10 y Php 8.2.0
 (Tener en cuenta los requisitos para que lo puedas manipular como desarrollador)
 
-Cuando el proyecto este en produccion solo de debe tener instalado un navegador Web de su prefecrencia para utilizar el sistema.
+Cuando el proyecto este en produccion solo de debe tener instalado un navegador Web de su preferencia para utilizar el sistema.
 
 ## Requisitos previos para la instalacion
 
@@ -28,7 +28,7 @@ Ejecuta los comando desde una terminal cmd
 
 ### ahora realiza lo siguiente:
 
-- Crea una nueva rama con el nombre que le desea dar: "newbranch" de esta manera 
+- Crea una nueva rama con el nombre que le desea dar: por ejemplo "newbranch" de esta manera 
 
 `git branch newbranch`
 
@@ -58,7 +58,7 @@ Ejecuta los comando desde una terminal cmd
 
 todos tienen la misma contraseña, es esta: "12345678"
 
-### ahora para activiar el serviror y las dependencias en una terminal ejecutamos
+### ahora para iniciar el servidor y las dependencias en una terminal ejecutamos
 
 `npm rum dev`
 
@@ -66,13 +66,13 @@ todos tienen la misma contraseña, es esta: "12345678"
 
 `php artisan serve`
 
-### ahora ingresa donde esta corriendo la apliacacion desde un navegador web normalmente seria
+### ahora ingresa donde esta corriendo la aplicacion desde un navegador web normalmente seria
 
 `http://127.0.0.1:8000`
 
 
 
-### Felicitaciones ya tienes corriendo el proyecto ahora puedes revisarlo y anotar notas las mejora que aun estan pendientes por desarrollo. siente libre de hacer las mejoras en tu rama y hacer tus susgerencias.
+### Felicitaciones ya tienes corriendo el proyecto ahora puedes revisarlo y anotar notas las mejora que aun estan pendientes por desarrollo. sientete libre de hacer las mejoras en tu rama y hacer tus sugerencias.
 
 
 
