@@ -11,7 +11,7 @@ Cuando el proyecto este en produccion solo de debe tener instalado un navegador 
 - Tener instalado una version de php 8.2.0 o superior
 - Tener instalado git ultima version disponible
 - Tener instalado composer ultima version
-- Tener instalado node.js ultima version 
+- Tener instalado node.js ultima version
 - Tener instalado un editor de codigo como Visual Code
 
 ## Guia de instalación

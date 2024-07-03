@@ -17,7 +17,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('users', App\Http\Controllers\UserController::class)->middleware('can:admin');
 
 //Route::resource('usuarios', App\Http\Controllers\UsuarioController::class)->middleware('can:admin');
-Route::resource('clientes', App\Http\Controllers\ClienteController::class)->middleware('can:admin');
+Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Route::resource('vehiculos', App\Http\Controllers\VehiculoController::class)->middleware('can:admin');
 Route::resource('plans', App\Http\Controllers\PlanController::class)->middleware('can:admin');
 Route::resource('contratos', App\Http\Controllers\ContratoController::class)->middleware('can:admin');
