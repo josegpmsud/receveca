@@ -85,14 +85,14 @@
                                     <tr>
                                         <th>No</th>
 
-									<th >Id Usuario</th>
-									<th >Id Vehiculo</th>
-									<th >Id Plan</th>
+									<th >Cliente</th>
+									<th >Placa Vehiculo</th>
+									<th >Plan</th>
 									<th >Fecha Ini</th>
 									<th >Fecha Fin</th>
 									<th >Codigo</th>
-									<th >Cobertura</th>
-									<th >Pago</th>
+									{{-- <th >Cobertura</th>
+									<th >Pago</th> --}}
 									<th >Estado</th>
 
                                         <th></th>
@@ -107,14 +107,14 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $contrato->id_usuario }}</td>
+										<td >{{ $contrato->vehiculo->cliente->apellido }} {{ $contrato->vehiculo->cliente->nombre }}</td>
 										<td >{{ $contrato->vehiculo->placa }}</td>
 										<td >{{ $contrato->plan->descripcion }}</td>
 										<td >{{ $contrato->fecha_ini }}</td>
 										<td >{{ $contrato->fecha_fin }}</td>
 										<td >{{ $contrato->codigo }}</td>
-										<td >{{ $contrato->cobertura }}</td>
-										<td >{{ $contrato->pago }}</td>
+										{{-- <td >{{ $contrato->cobertura }}</td>
+										<td >{{ $contrato->pago }}</td> --}}
 										<td >{{ $contrato->estado }}</td>
 
                                             <td>

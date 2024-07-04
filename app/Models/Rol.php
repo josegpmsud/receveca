@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
 class Rol extends Model
 {
     use HasFactory;
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
@@ -37,5 +37,5 @@ class Rol extends Model
     {
         return $this->hasMany(\App\Models\Usuario::class, 'id', 'id_rol');
     }
-    
+
 }

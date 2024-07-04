@@ -38,7 +38,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vehiculo extends Model
 {
     use HasFactory;
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
@@ -55,7 +55,7 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(\App\Models\Clase::class, 'id_clase', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -63,7 +63,7 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(\App\Models\Cliente::class, 'id_cliente', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -71,7 +71,7 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(\App\Models\Color::class, 'id_color', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -79,7 +79,7 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(\App\Models\Marca::class, 'id_marca', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -87,7 +87,7 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(\App\Models\Tipo::class, 'id_tipo', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -95,7 +95,7 @@ class Vehiculo extends Model
     {
         return $this->belongsTo(\App\Models\Uso::class, 'id_uso', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -103,5 +103,5 @@ class Vehiculo extends Model
     {
         return $this->hasMany(\App\Models\Contrato::class, 'id', 'id_vehiculo');
     }
-    
+
 }

@@ -30,7 +30,7 @@ use Illuminate\Database\Eloquent\Model;
 class Contrato extends Model
 {
     use HasFactory;
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
@@ -47,7 +47,7 @@ class Contrato extends Model
     {
         return $this->belongsTo(\App\Models\Plan::class, 'id_plan', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -55,7 +55,7 @@ class Contrato extends Model
     {
         return $this->belongsTo(\App\Models\Usuario::class, 'id_usuario', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -63,5 +63,5 @@ class Contrato extends Model
     {
         return $this->belongsTo(\App\Models\Vehiculo::class, 'id_vehiculo', 'id');
     }
-    
+
 }

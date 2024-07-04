@@ -19,7 +19,6 @@
             </div>
         --}}
 
-
         <div class="form-row">
             <div class="form-group col-md-4">
             <label for="id_plan" class="form-label">{{ __('Plan Id') }}</label>
@@ -54,7 +53,7 @@
             {!! $errors->first('codigo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 
-        <div class="form-group mb-2 mb20">
+        {{-- <div class="form-group mb-2 mb20">
             <label for="cobertura" class="form-label">{{ __('Cobertura') }}</label>
             <input type="hidden" name="cobertura" class="form-control @error('cobertura') is-invalid @enderror" value="{{ old('cobertura', $contrato?->cobertura) }}" id="cobertura" placeholder="Cobertura">
             {!! $errors->first('cobertura', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
@@ -63,7 +62,7 @@
             <label for="pago" class="form-label">{{ __('Pago') }}</label>
             <input type="hidden" name="pago" class="form-control @error('pago') is-invalid @enderror" value="{{ old('pago', $contrato?->pago) }}" id="pago" placeholder="Pago">
             {!! $errors->first('pago', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
-        </div>
+        </div> --}}
 
         <div class="form-group mb-2 mb20">
             <label for="estado" class="form-label">{{ __('') }}</label>

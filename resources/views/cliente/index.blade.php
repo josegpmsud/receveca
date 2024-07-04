@@ -26,10 +26,10 @@
 
                              <div class="float-right">
 
-
+                                {{--
                                 <a href="{{ route('clientes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear Nuevo') }}
-                                </a>
+                                </a> --}}
 
                               </div>
                         </div>
@@ -48,15 +48,15 @@
                                         <th>No</th>
 
 									<th >Nac</th>
+									<th >Cedula Rif</th>
 									<th >Nombre</th>
 									<th >Apellido</th>
-									<th >Cedula Rif</th>
-									<th >B Nac</th>
-									<th >B Nombre</th>
-									<th >B Apellido</th>
-									<th >B Cedula</th>
 									<th >Direccion</th>
 									<th >Telefono</th>
+									<th >B Nac</th>
+									<th >B Cedula</th>
+									<th >B Nombre</th>
+									<th >B Apellido</th>
 									<th >Estado</th>
 
                                         <th></th>
@@ -69,15 +69,15 @@
                                             <td>{{ ++$i }}</td>
 
 										<td >{{ $cliente->nac }}</td>
+										<td >{{ $cliente->cedula_rif }}</td>
 										<td >{{ $cliente->nombre }}</td>
 										<td >{{ $cliente->apellido }}</td>
-										<td >{{ $cliente->cedula_rif }}</td>
-										<td >{{ $cliente->b_nac }}</td>
-										<td >{{ $cliente->b_nombre }}</td>
-										<td >{{ $cliente->b_apellido }}</td>
-										<td >{{ $cliente->b_cedula }}</td>
 										<td >{{ $cliente->direccion }}</td>
 										<td >{{ $cliente->telefono }}</td>
+										<td >{{ $cliente->b_nac }}</td>
+										<td >{{ $cliente->b_cedula }}</td>
+										<td >{{ $cliente->b_nombre }}</td>
+										<td >{{ $cliente->b_apellido }}</td>
 										<td >{{ $cliente->estado }}</td>
 
                                             <td>

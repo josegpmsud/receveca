@@ -17,8 +17,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Nacionalidad extends Model
 {
-    
-    protected $perPage = 20;
+
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
