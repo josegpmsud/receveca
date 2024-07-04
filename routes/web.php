@@ -36,7 +36,7 @@ Route::get('/clientes/create/{cedula}', [App\Http\Controllers\ClienteController:
 
 //Route::get('/contratos/filtrado/{id}', [App\Http\Controllers\ContratoController::class, 'indexFilter'])->middleware('can:admin')->name('contratos.indexFilter');
 
-//Route::get('/filtro', [App\Http\Controllers\ContratoController::class, 'filter'])->name('filtro');
+Route::get('/filtro', [App\Http\Controllers\ContratoController::class, 'filter'])->name('filtro');
 
 //Route::get('/pedidos/filtrar', [PedidosController::class, 'filtrar'])->name('pedidos.filtrar');
 

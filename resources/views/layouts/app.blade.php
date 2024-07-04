@@ -60,6 +60,8 @@
                                 </li>
                             @endif
                         @else
+                        @can('asesor')
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('clientes.index')}}">Clientes</a>
                         </li>
@@ -70,6 +72,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('contratos.index')}}">Contratos</a>
                         </li>
+
+                        @endcan
 
                         @can('admin')
 
@@ -87,11 +91,11 @@
                         <li class="nav-item">
                                 <a class="nav-link" href="{{route('marcas.index')}}">Marcas</a>
                         </li>
-                        <!--
-                        <li class="nav-item">
+
+                        {{-- <li class="nav-item">
                             <a class="nav-link" href="{{route('rols.index')}}">roles</a>
-                        </li>
-                    -->
+                        </li> --}}
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('tipos.index')}}">Tipos</a>
                         </li>
