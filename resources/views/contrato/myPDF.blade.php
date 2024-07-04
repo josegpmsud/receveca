@@ -12,8 +12,18 @@
     <style>
         h6{ text-align: center;  }
         .salto{ height: 3cm;}
+        .carnet tr td, em{font-size: 12px;}
+        .carnet tr td{border: 1px solid;
+        border-color: black;}
 
     </style>
+    @php
+        $base = round($contrato->plan->valor/ 1.16,2);
+        $iva = round($contrato->plan->valor-$base,2);
+        $total = $iva+$base;
+
+        $cobertura = $contrato->plan->ter_muerte+$contrato->plan->ter_invalidez+$contrato->plan->ter_medicos+$contrato->plan->ocu_muerte+$contrato->plan->ocu_invalidez+$contrato->plan->ocu_medicos+$contrato->plan->danos+$contrato->plan->materiales+$contrato->plan->legal+$contrato->plan->limites+$contrato->plan->funerarios+$contrato->plan->grua+$contrato->plan->indem+$contrato->plan->extra;
+    @endphp
   </head>
   <body>
 
@@ -44,6 +54,7 @@
         <tr>
             <td>
                 Marca: {{$contrato->vehiculo->marca->descripcion}} <br>
+                Modelo: {{$contrato->vehiculo->modelo}} <br>
                 Clase: {{$contrato->vehiculo->clase->descripcion}} <br>
                 Color: {{$contrato->vehiculo->color->descripcion}} <br>
                 Tipo: {{$contrato->vehiculo->tipo->descripcion}} <br>
@@ -95,15 +106,23 @@
         </tr>
     </table>
 
-    Monto Maximo de Cobertura: <br>
+    <strong>Monto Maximo de Cobertura:</strong>
+    @php
+        echo    round($cobertura,2). " Bs";
+    @endphp
+    <br>
     <hr>
     <table>
         <tr>
             <td>
-                <strong>Monto Total de la base imponible al valor agregado:</strong>
+                <strong>Monto Total de la base imponible al valor agregado:
+
+                </strong>
             </td>
             <td>
-                Bs
+                @php
+                    echo $base . " Bs <br>";
+                @endphp
             </td>
         </tr>
         <tr>
@@ -111,7 +130,9 @@
                 <strong>Monto Total del Impuesto al valor agregado 16%:</strong>
             </td>
             <td>
-                Bs
+                @php
+                    echo $iva . " Bs <br>";
+                @endphp
             </td>
         </tr>
         <tr>
@@ -119,7 +140,7 @@
                 <strong>Valor Total de la Venta:</strong>
             </td>
             <td>
-                Bs
+                <strong>{{$contrato->plan->valor}} Bs</strong>
             </td>
         </tr>
     </table>
@@ -133,7 +154,7 @@
 
     </div>
 
-    <h6>Factura {{$contrato->fecha_ini}}</h6>
+    {{-- <h6>Factura {{$contrato->fecha_ini}}</h6> --}}
     <table>
         <tr>
             <td>
@@ -148,13 +169,139 @@
 
 
     </table>
+    <hr>
+    <table>
+        <tr>
+            <td>
+                <strong>Monto Total de la base imponible al valor agregado:</strong>
+            </td>
+            <td>
+                @php
+                    echo $base . " Bs <br>";
+                @endphp
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Monto Total del Impuesto al valor agregado 16%:</strong>
+            </td>
+            <td>
+                @php
+                    echo $iva . " Bs <br>";
+                @endphp
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Valor Total de la Venta:</strong>
+            </td>
+            <td>
+                <strong>{{$contrato->plan->valor}} Bs</strong>
+            </td>
+        </tr>
+    </table>
+    <hr>
+    <div class="salto"></div>
+    <hr>
 
-    <h6>Copia Factura</h6>
 
-    <h6>Carnet</h6>
 
+    {{-- <h6>Copia Factura</h6> --}}
+    <table>
+        <tr>
+            <td>
+                <tr><td>Apellidos y nombres:</td><td>{{$contrato->vehiculo->cliente->apellido}} {{$contrato->vehiculo->cliente->nombre}}</td></tr>
+                <tr><td>C.I/R.I.F:</td><td>{{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}}</td></tr>
+                <tr><td>Descripción:</td><td>Pago del contrato Nro: {{$contrato->codigo}} </td></tr>
+                <tr><td>Teléfono:</td><td>{{$contrato->vehiculo->cliente->telefono}}</td></tr>
+                <tr><td>Placa:</td><td>{{$contrato->vehiculo->placa}}</td></tr>
+            </td>
+
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <td>
+                <strong>Monto Total de la base imponible al valor agregado:</strong>
+            </td>
+            <td>
+                @php
+                    echo $base . " Bs <br>";
+                @endphp
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Monto Total del Impuesto al valor agregado 16%:</strong>
+            </td>
+            <td>
+                @php
+                    echo $iva . " Bs <br>";
+                @endphp
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <strong>Valor Total de la Venta:</strong>
+            </td>
+            <td>
+                <strong>{{$contrato->plan->valor}}</strong> Bs
+            </td>
+        </tr>
+    </table>
+    <hr>
+    {{-- <h6>Carnet</h6> --}}
+    <hr>
+    <table class="carnet">
+
+        <tr>
+            <td colspan="2">Afiliado: {{$contrato->vehiculo->cliente->apellido}} {{$contrato->vehiculo->cliente->nombre}}</td>
+        </tr>
+        <tr>
+            <td>C:I/RIF: {{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}}</td>
+            <td>Placa: {{$contrato->vehiculo->placa}}</td>
+        </tr>
+        <tr>
+            <td>Modelo: {{$contrato->vehiculo->modelo}} <br></td>
+            <td>Marca: {{$contrato->vehiculo->marca->descripcion}}</td>
+        </tr>
+        <tr>
+            <td>Color: {{$contrato->vehiculo->color->descripcion}}</td>
+            <td>Año: {{$contrato->vehiculo->ano}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Serial: {{$contrato->vehiculo->serial_motor}}</td>
+        </tr>
+        <tr>
+            <td>Vigencia: {{$contrato->fecha_ini}}</td>
+            <td>Hasta: {{$contrato->fecha_fin}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Nro de Contrato: {{$contrato->codigo}}</td>
+        </tr>
+
+        {{-- <td>
+
+                <td>Esta credencial certifica que el vehiculo <br>
+                    aqui descrito tiene poliza de RCV que <br>
+                    cubre daños causados a personas y cosas <br>
+                    a nivel nacional. <br>
+                    Agradecemos a las autoridades civiles, militares <br>
+                    yde transito prestar la cooperación.
+                    <br>
+                    <br>
+                    <p>Firma Autorizada</p></td>
+
+
+
+        </td> --}}
+
+    </table>
   </body>
 </html>
+
+
 
 
 
