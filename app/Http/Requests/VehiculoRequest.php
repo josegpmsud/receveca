@@ -22,18 +22,18 @@ class VehiculoRequest extends FormRequest
     public function rules(): array
     {
         return [
-			'id_cliente' => 'required',
-			'id_marca' => 'required',
-			'id_clase' => 'required',
+			'id_cliente' => 'required|integer',
+			'id_marca' => 'required|integer',
+			'id_clase' => 'required|integer',
 			'modelo' => 'required|string',
-			'id_color' => 'required',
-			'id_tipo' => 'required',
-			'id_uso' => 'required',
+			'id_color' => 'required|integer',
+			'id_tipo' => 'required|integer',
+			'id_uso' => 'required|integer',
 			'placa' => 'required|string',
-			'ano' => 'required',
+			'ano' => 'required|integer',
 			'peso' => 'required|string',
 			'serial_motor' => 'required|string',
-			'puestos' => 'required',
+			'puestos' => 'required|integer',
 			'serial_niv' => 'required|string',
         ];
     }

@@ -30,7 +30,7 @@ class ContratoRequest extends FormRequest
 			'codigo' => 'required',
 			//'cobertura' => 'required',
 			//'pago' => 'required',
-			'estado' => 'required',
+			//'estado' => 'required',
         ];
     }
 }

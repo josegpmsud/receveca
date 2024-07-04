@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('plans', function (Blueprint $table) {
             $table->id();
             $table->float('ter_muerte'); //nacionalidad
-            $table->float('ter_invalidez');            
+            $table->float('ter_invalidez');
             $table->float('ter_medicos');
 
             $table->float('ocu_muerte');
             $table->float('ocu_invalidez');
-            $table->float('ocu_medicos'); 
+            $table->float('ocu_medicos');
 
             $table->float('danos');
             $table->float('materiales');
@@ -35,7 +35,7 @@ return new class extends Migration
             $table->float('valor');//en pesos o dollar
             $table->string('descripcion')->unique();//nombre del plan
 
-            $table->tinyInteger('estado');
+            $table->tinyInteger('estado')->default(1);
             $table->timestamps();
         });
     }

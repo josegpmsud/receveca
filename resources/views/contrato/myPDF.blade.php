@@ -59,8 +59,16 @@
     Teléfono: {{$contrato->vehiculo->cliente->telefono}}  <br>
     Dirección: {{$contrato->vehiculo->cliente->direccion}}  <br>
 
-    Beneficiario: {{$contrato->vehiculo->cliente->b_nombre}} {{$contrato->vehiculo->cliente->b_apellido}} <br>
-    Cédula/RIF: {{$contrato->vehiculo->cliente->b_nac}} {{$contrato->vehiculo->cliente->b_cedula}} <br>
+    @php
+        if ($contrato->vehiculo->cliente->b_nombre == NULL) {
+           echo "<br><br>";
+        }
+        else {
+            echo "Cédula/RIF Beneficiario: ". $contrato->vehiculo->cliente->b_nac." ".$contrato->vehiculo->cliente->b_cedula. "<br>";
+            echo "Beneficiario: ". $contrato->vehiculo->cliente->b_nombre . $contrato->vehiculo->cliente->b_apellido. "<br>";
+        }
+
+    @endphp
 
     <hr>
     <h6>DATOS DEL VEHICULO</h6>

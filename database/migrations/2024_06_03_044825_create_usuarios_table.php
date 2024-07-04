@@ -15,11 +15,11 @@ return new class extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');            
-            $table->string('apellido');        
+            $table->string('nombre');
+            $table->string('apellido');
             $table->string('usuario')->unique();
             $table->string('contrasena');//agregar numero de campos debe estar hashada
-            
+
             $table->unsignedBigInteger('id_rol');
             $table->foreign('id_rol')
                 ->references('id')
@@ -27,7 +27,7 @@ return new class extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->tinyInteger('estado');
+            $table->tinyInteger('estado')->default(1);
             $table->timestamps();
 
 

@@ -17,20 +17,20 @@ return new class extends Migration
             $table->id();
             $table->string('nac'); //nacionalidad
 
-            $table->string('nombre');            
-            $table->string('apellido'); 
+            $table->string('nombre');
+            $table->string('apellido');
             $table->string('cedula_rif')->unique();
 
-            $table->string('b_nac');
-            $table->string('b_nombre');            
-            $table->string('b_apellido');
-            $table->string('b_cedula');
+            $table->string('b_nac')->nullable(true);
+            $table->string('b_nombre')->nullable(true);
+            $table->string('b_apellido')->nullable(true);
+            $table->string('b_cedula')->nullable(true);
 
             $table->string('direccion');
             $table->string('telefono');
 
-            $table->tinyInteger('estado');
-            $table->timestamps();            
+            $table->tinyInteger('estado')->default(1);
+            $table->timestamps();
         });
     }
 
