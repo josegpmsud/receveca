@@ -11,7 +11,7 @@
     <title>Contrato PDF</title>
     <style>
         h6{ text-align: center;  }
-        .salto{ height: 3cm;}
+        .salto{ height: 2.5cm;}
         .carnet tr td, em{font-size: 12px;}
         .carnet tr td{border: 1px solid;
         border-color: black;}
@@ -23,6 +23,13 @@
         $total = $iva+$base;
 
         $cobertura = $contrato->plan->ter_muerte+$contrato->plan->ter_invalidez+$contrato->plan->ter_medicos+$contrato->plan->ocu_muerte+$contrato->plan->ocu_invalidez+$contrato->plan->ocu_medicos+$contrato->plan->danos+$contrato->plan->materiales+$contrato->plan->legal+$contrato->plan->limites+$contrato->plan->funerarios+$contrato->plan->grua+$contrato->plan->indem+$contrato->plan->extra;
+
+        $originalDate = $contrato->fecha_ini;
+        $newDate = date("d/m/Y", strtotime($originalDate));
+        //echo $newDate;
+        $originalDate2 = $contrato->fecha_fin;
+        $newDate2 = date("d/m/Y", strtotime($originalDate2));
+        //echo $newDate2;
     @endphp
   </head>
   <body>
@@ -36,7 +43,14 @@
     <h6>CONTRATO DE GARANTIAS DE DAÑOS A TERCEROS</h6>
 
     Nro: {{$contrato->codigo}} <br>
-    Vigencia: desde {{$contrato->fecha_ini}} hasta {{$contrato->fecha_fin}} <br>
+    Vigencia: desde
+    @php
+        echo $newDate;
+    @endphp
+    hasta
+    @php
+        echo $newDate2;
+    @endphp <br>
     <hr>
     <h6>DATOS DEL AFILIADO</h6>
 
@@ -154,10 +168,15 @@
 
     </div>
 
-    {{-- <h6>Factura {{$contrato->fecha_ini}}</h6> --}}
+    {{-- <h6>Fecha {{$contrato->fecha_ini}}</h6> --}}
     <table>
         <tr>
             <td>
+                <tr><td>Fecha:</td><td>
+                    @php
+                        echo $newDate;
+                    @endphp
+                </td></tr>
                 <tr><td>Apellidos y nombres:</td><td>{{$contrato->vehiculo->cliente->apellido}} {{$contrato->vehiculo->cliente->nombre}}</td></tr>
                 <tr><td>C.I/R.I.F:</td><td>{{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}}</td></tr>
                 <tr><td>Descripción:</td><td>Pago del contrato Nro: {{$contrato->codigo}} </td></tr>
@@ -210,6 +229,11 @@
     <table>
         <tr>
             <td>
+                <tr><td>Fecha:</td><td>
+                    @php
+                        echo $newDate;
+                    @endphp
+                    </td></tr>
                 <tr><td>Apellidos y nombres:</td><td>{{$contrato->vehiculo->cliente->apellido}} {{$contrato->vehiculo->cliente->nombre}}</td></tr>
                 <tr><td>C.I/R.I.F:</td><td>{{$contrato->vehiculo->cliente->nac}} {{$contrato->vehiculo->cliente->cedula_rif}}</td></tr>
                 <tr><td>Descripción:</td><td>Pago del contrato Nro: {{$contrato->codigo}} </td></tr>
@@ -274,8 +298,14 @@
             <td colspan="2">Serial: {{$contrato->vehiculo->serial_motor}}</td>
         </tr>
         <tr>
-            <td>Vigencia: {{$contrato->fecha_ini}}</td>
-            <td>Hasta: {{$contrato->fecha_fin}}</td>
+            <td>Vigencia:
+            @php
+                echo $newDate;
+            @endphp</td>
+            <td>Hasta:
+            @php
+                echo $newDate2;
+            @endphp</td>
         </tr>
         <tr>
             <td colspan="2">Nro de Contrato: {{$contrato->codigo}}</td>
