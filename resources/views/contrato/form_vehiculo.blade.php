@@ -7,8 +7,8 @@
             {!! $errors->first('id_usuario', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="id_vehiculo" class="form-label">{{ __('Id Vehiculo') }}</label>
-            <input type="text" name="id_vehiculo" class="form-control @error('id_vehiculo') is-invalid @enderror" value="{{ $id }}" id="id_vehiculo" placeholder="Id Vehiculo">
+            <label for="id_vehiculo" class="form-label">{{ __('') }}</label>
+            <input type="hidden" name="id_vehiculo" class="form-control @error('id_vehiculo') is-invalid @enderror" value="{{ $id }}" id="id_vehiculo" placeholder="Id Vehiculo">
             {!! $errors->first('id_vehiculo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         {{--
@@ -21,7 +21,7 @@
 
         <div class="form-row">
             <div class="form-group col-md-4">
-            <label for="id_plan" class="form-label">{{ __('Plan Id') }}</label>
+            <label for="id_plan" class="form-label">{{ __('Plan') }}</label>
 
               <select id='select'  class="form-control" name="id_plan">
                 <option selected disabled readonly value="{{ old('id_plan', $contrato?->id_plan) }}" >--Selecciona el plan--</option>
@@ -48,7 +48,7 @@
 
 
         <div class="form-group mb-2 mb20">
-            <label for="codigo" class="form-label">{{ __('Codigo') }}</label>
+            <label for="codigo" class="form-label">{{ __('Nro de Contrato') }}</label>
             <input type="text" name="codigo" class="form-control @error('codigo') is-invalid @enderror" value="{{ old('codigo', $contrato?->codigo) }}" id="codigo" placeholder="Codigo">
             {!! $errors->first('codigo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>

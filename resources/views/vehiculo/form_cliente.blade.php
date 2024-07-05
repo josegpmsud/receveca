@@ -2,8 +2,8 @@
     <div class="col-md-12">
 
         <div class="form-group mb-2 mb20">
-            <label for="id_cliente" class="form-label">{{ __('Id Cliente') }}</label>
-            <input type="text" name="id_cliente" class="form-control @error('id_cliente') is-invalid @enderror" value="{{ $id }}" id="id_cliente" placeholder="Id Cliente">
+            <label for="id_cliente" class="form-label">{{ __('') }}</label>
+            <input type="hidden" name="id_cliente" class="form-control @error('id_cliente') is-invalid @enderror" value="{{ $id }}" id="id_cliente" placeholder="Id Cliente">
             {!! $errors->first('id_cliente', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 

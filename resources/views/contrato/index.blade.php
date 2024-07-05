@@ -92,7 +92,7 @@
 									<th >Plan</th>
 									<th >Fecha Ini</th>
 									<th >Fecha Fin</th>
-									<th >Codigo</th>
+									<th >Nro Contrato</th>
 									{{-- <th >Cobertura</th>
 									<th >Pago</th> --}}
 									<th >Valor</th>
