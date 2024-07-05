@@ -65,7 +65,7 @@
         }
         else {
             echo "Cédula/RIF Beneficiario: ". $contrato->vehiculo->cliente->b_nac." ".$contrato->vehiculo->cliente->b_cedula. "<br>";
-            echo "Beneficiario: ". $contrato->vehiculo->cliente->b_nombre . $contrato->vehiculo->cliente->b_apellido. "<br>";
+            echo "Beneficiario: ". $contrato->vehiculo->cliente->b_nombre . " " . $contrato->vehiculo->cliente->b_apellido. "<br>";
         }
 
     @endphp

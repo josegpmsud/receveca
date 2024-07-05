@@ -117,15 +117,14 @@
             </div>
           </div>
 
-
         <div class="form-group mb-2 mb20">
             <label for="placa" class="form-label">{{ __('Placa') }}</label>
             <input type="text" name="placa" class="form-control @error('placa') is-invalid @enderror" value="{{ old('placa', $vehiculo?->placa) }}" id="placa" placeholder="Placa" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
             {!! $errors->first('placa', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
-            <label for="ano" class="form-label">{{ __('Ano') }}</label>
-            <input type="text" name="ano" class="form-control @error('ano') is-invalid @enderror" value="{{ old('ano', $vehiculo?->ano) }}" id="ano" placeholder="Ano">
+            <label for="ano" class="form-label">{{ __('Año') }}</label>
+            <input type="text" name="ano" class="form-control @error('ano') is-invalid @enderror" value="{{ old('ano', $vehiculo?->ano) }}" id="ano" placeholder="Año">
             {!! $errors->first('ano', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
