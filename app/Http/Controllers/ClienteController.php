@@ -23,6 +23,7 @@ class ClienteController extends Controller
                 return $query->where('cedula_rif','LIKE','%' . request('search') .'%')
                 ->orWhere('nombre','LIKE','%' . request('search') .'%')
                 ->orWhere('apellido','LIKE','%' . request('search') .'%')
+                ->orWhere('correo','LIKE','%' . request('search') .'%')
                 ->orWhere('b_cedula','LIKE','%' . request('search') .'%')
                 ->orWhere('b_nombre','LIKE','%' . request('search') .'%')
                 ->orWhere('b_apellido','LIKE','%' . request('search') .'%')

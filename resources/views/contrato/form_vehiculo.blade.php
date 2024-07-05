@@ -44,7 +44,7 @@
             <input type="date" name="fecha_fin" class="form-control @error('fecha_fin') is-invalid @enderror" value="{{ now() }}" id="fecha_fin" placeholder="Fecha Fin">
             {!! $errors->first('fecha_fin', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
-    --}}
+        --}}
 
 
         <div class="form-group mb-2 mb20">

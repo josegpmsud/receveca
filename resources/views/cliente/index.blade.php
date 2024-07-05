@@ -15,6 +15,7 @@
                             <span id="card_title">
                                 {{ __('Clientes') }}
                             </span>
+                            @can('asesor')
 
                             <form method="GET">
                                 <div class="input-group mb-3">
@@ -24,6 +25,7 @@
 
                             </form>
 
+                            @endcan
                              <div class="float-right">
 
                                 {{--
@@ -51,6 +53,7 @@
 									<th >Cedula Rif</th>
 									<th >Nombre</th>
 									<th >Apellido</th>
+                                    <th >Correo</th>
 									<th >Direccion</th>
 									<th >Telefono</th>
 									<th >B Nac</th>
@@ -72,6 +75,7 @@
 										<td >{{ $cliente->cedula_rif }}</td>
 										<td >{{ $cliente->nombre }}</td>
 										<td >{{ $cliente->apellido }}</td>
+                                        <td >{{ $cliente->correo }}</td>
 										<td >{{ $cliente->direccion }}</td>
 										<td >{{ $cliente->telefono }}</td>
 										<td >{{ $cliente->b_nac }}</td>
@@ -81,14 +85,19 @@
 										<td >{{ $cliente->estado }}</td>
 
                                             <td>
+
                                                 <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('clientes.show', $cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Selecionar <i class="bi bi-file-earmark"></i></a>
+                                                    @can('asesor')
                                                     <a class="btn btn-sm btn-success" href="{{ route('clientes.edit', $cliente->id) }}"><i class="fa fa-fw fa-edit"></i><i class="bi bi-pencil-square"></i></a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i><i class="bi bi-trash3"></i>
-                                                        </button>
+
+                                                    </button>
+                                                    @endcan
                                                 </form>
+
                                             </td>
                                         </tr>
                                     @endforeach

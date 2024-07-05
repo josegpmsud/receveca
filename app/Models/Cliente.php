@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $nombre
  * @property $apellido
  * @property $cedula_rif
+ * @property $correo
  * @property $b_nac
  * @property $b_nombre
  * @property $b_apellido
@@ -38,7 +39,7 @@ class Cliente extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['nac', 'nombre', 'apellido', 'cedula_rif', 'b_nac', 'b_nombre', 'b_apellido', 'b_cedula', 'direccion', 'telefono', 'estado'];
+    protected $fillable = ['nac', 'nombre', 'apellido', 'cedula_rif', 'correo', 'b_nac', 'b_nombre', 'b_apellido', 'b_cedula', 'direccion', 'telefono', 'estado'];
 
 
     /**

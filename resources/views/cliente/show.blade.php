@@ -25,6 +25,10 @@
                                     {{ $cliente->nac }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
+                                    <strong>Cedula Rif:</strong>
+                                    {{ $cliente->cedula_rif }}
+                                </div>
+                                <div class="form-group mb-2 mb20">
                                     <strong>Nombre:</strong>
                                     {{ $cliente->nombre }}
                                 </div>
@@ -33,9 +37,10 @@
                                     {{ $cliente->apellido }}
                                 </div>
                                 <div class="form-group mb-2 mb20">
-                                    <strong>Cedula Rif:</strong>
-                                    {{ $cliente->cedula_rif }}
+                                    <strong>Correo:</strong>
+                                    {{ $cliente->correo }}
                                 </div>
+
                                 <div class="form-group mb-2 mb20">
                                     <strong>B Nac:</strong>
                                     {{ $cliente->b_nac }}

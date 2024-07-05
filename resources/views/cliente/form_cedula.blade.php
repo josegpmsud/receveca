@@ -37,6 +37,11 @@
             {!! $errors->first('apellido', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
+            <label for="correo" class="form-label">{{ __('Correo') }}</label>
+            <input type="text" name="correo" class="form-control @error('correo') is-invalid @enderror" value="{{ old('correo', $cliente?->correo) }}" id="correo" placeholder="Correo">
+            {!! $errors->first('correo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
             <label for="direccion" class="form-label">{{ __('Direccion') }}</label>
             <input type="text" name="direccion" class="form-control @error('direccion') is-invalid @enderror" value="{{ old('direccion', $cliente?->direccion) }}" id="direccion" placeholder="Direccion">
             {!! $errors->first('direccion', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}

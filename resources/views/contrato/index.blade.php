@@ -15,6 +15,8 @@
                             <span id="card_title">
                                 {{ __('Contratos') }}
                             </span>
+                            @can('asesor')
+
 
                             <form method="GET">
                                 <div class="input-group mb-3">
@@ -61,7 +63,7 @@
 
 
                             </form>
-
+                            @endcan
                              <div class="float-right">
 
                                 {{--
@@ -93,6 +95,8 @@
 									<th >Codigo</th>
 									{{-- <th >Cobertura</th>
 									<th >Pago</th> --}}
+									<th >Valor</th>
+
 									<th >Estado</th>
 
                                         <th></th>
@@ -102,6 +106,7 @@
 
                                     @php
                                         $i=0;
+                                        $t=0;
                                     @endphp
                                     @foreach ($contratos as $contrato)
                                         <tr>
@@ -115,6 +120,7 @@
 										<td >{{ $contrato->codigo }}</td>
 										{{-- <td >{{ $contrato->cobertura }}</td>
 										<td >{{ $contrato->pago }}</td> --}}
+                                        <td >{{ $contrato->plan->valor }}</td>
 										<td >{{ $contrato->estado }}</td>
 
                                             <td>
@@ -128,8 +134,17 @@
                                                     <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i><i class="bi bi-trash3"></i></button>
                                                 </form>
                                             </td>
+                                            @php
+                                                $t=$t+$contrato->plan->valor;
+
+                                            @endphp
+
                                         </tr>
+
                                     @endforeach
+                                    <tr>
+                                    <h1>Venta Total pag: <strong>{{$t}} Bs </strong></h1>
+                                    </tr>
                                     {{--
                                     @foreach ($contratos as $contrato)
                                         <li>{{ $contrato->fecha_ini }} - {{ $contrato->codigo }}</li>
