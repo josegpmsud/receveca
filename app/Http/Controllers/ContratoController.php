@@ -30,6 +30,9 @@ class ContratoController extends Controller
             ->orWhere('fecha_fin','LIKE','%' . request('search') .'%')
             ->orWhereHas('plan', function ($q) {
                 $q->where('descripcion','LIKE','%'. request('search') . '%');
+            })
+            ->orWhereHas('vehiculo', function ($q2) {
+                $q2->where('placa','LIKE','%'. request('search') . '%');
             });
         })
         ->paginate();

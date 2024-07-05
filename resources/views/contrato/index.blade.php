@@ -15,6 +15,8 @@
                             <span id="card_title">
                                 {{ __('Contratos') }}
                             </span>
+                            @can('asesor')
+
 
                             <form method="GET">
                                 <div class="input-group mb-3">
@@ -61,7 +63,7 @@
 
 
                             </form>
-
+                            @endcan
                              <div class="float-right">
 
                                 {{--

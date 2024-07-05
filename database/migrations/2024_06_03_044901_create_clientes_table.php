@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('apellido');
             $table->string('cedula_rif')->unique();
+            $table->string('correo')->unique();
 
             $table->string('b_nac')->nullable(true);
             $table->string('b_nombre')->nullable(true);

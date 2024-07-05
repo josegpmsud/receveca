@@ -60,6 +60,28 @@
                                 </li>
                             @endif
                         @else
+                        @can('cliente')
+
+                        <li class="nav-item">
+                            {{-- <a class="nav-link" href="{{route('clientes.index')}}">Ver mis contratos</a> --}}
+                            <form method="GET" action="{{route('clientes.index')}}">
+                                <div class="input-group mb-3">
+                                    <input name= "search" type="hidden" value="{{ Auth::user()->email }}" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Ver mis datos</button>
+                                </div>
+                            </form>
+                        </li>
+
+                        <li class="nav-item">
+                            {{-- <a class="nav-link" href="{{route('clientes.index')}}">Ver mis contratos</a> --}}
+                            <form method="GET" action="{{route('contratos.index')}}">
+                                <div class="input-group mb-3">
+                                    <input name= "search" type="hidden" value="{{ Auth::user()->email }}" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Ver mis contratos</button>
+                                </div>
+                            </form>
+                        </li>
+                        @endcan
                         @can('asesor')
 
                         <li class="nav-item">
@@ -107,6 +129,15 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('clases.index')}}">Clases</a>
+                        </li>
+                        @endcan
+
+                        @can('super')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('model-has-roles.index')}}">Asignacion de roles</a>
                         </li>
                         @endcan
 

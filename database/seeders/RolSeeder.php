@@ -27,5 +27,9 @@ class RolSeeder extends Seeder
         $rol = new Rol();
         $rol-> descripcion = "Cliente";
         $rol->save();
+
+        $rol = new Rol();
+        $rol-> descripcion = "Super Usuario";
+        $rol->save();
     }
 }

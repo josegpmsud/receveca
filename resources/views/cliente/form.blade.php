@@ -1,6 +1,6 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
-        
+
         <div class="form-group mb-2 mb20">
             <label for="nac" class="form-label">{{ __('Nac') }}</label>
             <input type="text" name="nac" class="form-control @error('nac') is-invalid @enderror" value="{{ old('nac', $cliente?->nac) }}" id="nac" placeholder="Nac">
@@ -15,6 +15,11 @@
             <label for="apellido" class="form-label">{{ __('Apellido') }}</label>
             <input type="text" name="apellido" class="form-control @error('apellido') is-invalid @enderror" value="{{ old('apellido', $cliente?->apellido) }}" id="apellido" placeholder="Apellido">
             {!! $errors->first('apellido', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
+        </div>
+        <div class="form-group mb-2 mb20">
+            <label for="correo" class="form-label">{{ __('correo') }}</label>
+            <input type="text" name="correo" class="form-control @error('correo') is-invalid @enderror" value="{{ old('correo', $cliente?->correo) }}" id="correo" placeholder="Correo">
+            {!! $errors->first('correo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
             <label for="cedula_rif" class="form-label">{{ __('Cedula Rif') }}</label>

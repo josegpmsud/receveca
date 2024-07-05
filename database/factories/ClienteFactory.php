@@ -21,6 +21,7 @@ class ClienteFactory extends Factory
             'nombre' => fake()->firstName(),
             'apellido' => fake()->lastName(),
             'cedula_rif' => fake()->unique()->text(10),
+            'correo' => fake()->unique()->email(),
             'b_nac' => fake()->text(5),
             'b_nombre' => fake()->firstName(),
             'b_apellido' => fake()->lastName(),
