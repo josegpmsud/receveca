@@ -50,11 +50,12 @@ Ejecuta los comando desde una terminal cmd
 
 `php artisan migrate:fresh --seed`
 
-- Por defecto se han creado 3 usuarios
+- Por defecto se han creado 4 usuarios
 
 "admin@admin" que tiene permisos de admin <br>
 "asesor@asesor" que tiene permisos de asesor <br>
 "cliente@cliente" que tiene permisos de cliente <br>
+"super@super" que tiene permisos de super <br>
 
 todos tienen la misma contraseña, es esta: "12345678"
 

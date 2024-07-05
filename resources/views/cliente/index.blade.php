@@ -60,7 +60,7 @@
 									<th >B Cedula</th>
 									<th >B Nombre</th>
 									<th >B Apellido</th>
-									<th >Estado</th>
+									{{-- <th >Estado</th> --}}
 
                                         <th></th>
                                     </tr>
@@ -82,12 +82,12 @@
 										<td >{{ $cliente->b_cedula }}</td>
 										<td >{{ $cliente->b_nombre }}</td>
 										<td >{{ $cliente->b_apellido }}</td>
-										<td >{{ $cliente->estado }}</td>
+										{{-- <td >{{ $cliente->estado }}</td> --}}
 
                                             <td>
 
                                                 <form action="{{ route('clientes.destroy', $cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show', $cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Selecionar <i class="bi bi-file-earmark"></i></a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show', $cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Seleccionar <i class="bi bi-file-earmark"></i></a>
                                                     @can('asesor')
                                                     <a class="btn btn-sm btn-success" href="{{ route('clientes.edit', $cliente->id) }}"><i class="fa fa-fw fa-edit"></i><i class="bi bi-pencil-square"></i></a>
                                                     @csrf

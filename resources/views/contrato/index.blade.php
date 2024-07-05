@@ -97,7 +97,7 @@
 									<th >Pago</th> --}}
 									<th >Valor</th>
 
-									<th >Estado</th>
+									{{-- <th >Estado</th> --}}
 
                                         <th></th>
                                     </tr>
@@ -116,12 +116,24 @@
 										<td >{{ $contrato->vehiculo->placa }}</td>
 										<td >{{ $contrato->plan->descripcion }}</td>
 										<td >{{ $contrato->fecha_ini }}</td>
-										<td >{{ $contrato->fecha_fin }}</td>
+										<td >
+                                            {{ $contrato->fecha_fin }}
+                                            @php
+
+                                                        $fecha = $contrato->fecha_fin;
+                                                        $current_date = date('Y-m-d'); // fecha actual
+                                                        if($current_date < $fecha) {
+                                                                echo "";
+                                                            } else {
+                                                                echo "   <strong style='color:red'>Contrato vencido</strong>";
+                                                            }
+                                            @endphp
+                                        </td>
 										<td >{{ $contrato->codigo }}</td>
 										{{-- <td >{{ $contrato->cobertura }}</td>
 										<td >{{ $contrato->pago }}</td> --}}
                                         <td >{{ $contrato->plan->valor }}</td>
-										<td >{{ $contrato->estado }}</td>
+										{{-- <td >{{ $contrato->estado }}</td> --}}
 
                                             <td>
                                                 <form action="{{ route('contratos.destroy', $contrato->id) }}" method="POST">
