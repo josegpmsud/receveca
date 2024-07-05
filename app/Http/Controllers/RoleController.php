@@ -9,6 +9,7 @@ use App\Http\Requests\RoleRequest;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
+
 class RoleController extends Controller
 {
     /**
@@ -29,7 +30,7 @@ class RoleController extends Controller
     {
         $role = new Role();
 
-        return view('role.create', compact('role'));
+        return view('role.create', compact('role', 'roles'));
     }
 
     /**

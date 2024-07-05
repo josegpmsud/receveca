@@ -6,8 +6,11 @@ use App\Models\ModelHasRole;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use App\Http\Requests\ModelHasRoleRequest;
+use App\Models\Role;
+use App\Models\User;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
+
 
 class ModelHasRoleController extends Controller
 {
@@ -28,8 +31,9 @@ class ModelHasRoleController extends Controller
     public function create(): View
     {
         $modelHasRole = new ModelHasRole();
-
-        return view('model-has-role.create', compact('modelHasRole'));
+        $roles = Role::all();
+        $users = User::all();
+        return view('model-has-role.create', compact('modelHasRole', 'roles', 'users'));
     }
 
     /**
@@ -38,6 +42,7 @@ class ModelHasRoleController extends Controller
     public function store(ModelHasRoleRequest $request): RedirectResponse
     {
         ModelHasRole::create($request->validated());
+
 
         return Redirect::route('model-has-roles.index')
             ->with('success', 'ModelHasRole created successfully.');

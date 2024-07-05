@@ -36,9 +36,9 @@
                                     <tr>
                                         <th>No</th>
 
-									<th >Role Id</th>
-									<th >Model Type</th>
-									<th >Model Id</th>
+									<th >Rol</th>
+
+									<th >Usuario Id</th>
 
                                         <th></th>
                                     </tr>
@@ -48,8 +48,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $modelHasRole->role_id }}</td>
-										<td >{{ $modelHasRole->model_type }}</td>
+										<td >{{ $modelHasRole->role->name }}</td>
+
 										<td >{{ $modelHasRole->model_id }}</td>
 
                                             <td>
