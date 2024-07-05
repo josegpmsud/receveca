@@ -22,7 +22,7 @@ Route::resource('plans', App\Http\Controllers\PlanController::class)->middleware
 Route::resource('contratos', App\Http\Controllers\ContratoController::class)->middleware('can:asesor');
 Route::resource('roles', App\Http\Controllers\RoleController::class)->middleware('can:super');
 Route::resource('model-has-roles', App\Http\Controllers\ModelHasRoleController::class)->middleware('can:super');
-Route::resource('rols', App\Http\Controllers\RolController::class)->middleware('can:admin');
+Route::resource('rols', App\Http\Controllers\RolController::class)->middleware('can:super');
 Route::resource('marcas', App\Http\Controllers\MarcaController::class)->middleware('can:admin');
 Route::resource('tipos', App\Http\Controllers\TipoController::class)->middleware('can:admin');
 Route::resource('usos', App\Http\Controllers\UsoController::class)->middleware('can:admin');
