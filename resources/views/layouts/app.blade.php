@@ -99,9 +99,7 @@
 
                         @can('admin')
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
-                        </li>
+
                         {{--
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('usuarios.index')}}">usuarios</a>
@@ -133,6 +131,9 @@
                         @endcan
 
                         @can('super')
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('users.index')}}">Usuarios</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('roles.index')}}">Roles</a>
                         </li>

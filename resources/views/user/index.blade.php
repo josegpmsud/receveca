@@ -35,10 +35,10 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+
 									<th >Name</th>
 									<th >Email</th>
-									<th >Id Rol</th>
+									{{-- <th >Id Rol</th> --}}
 
                                         <th></th>
                                     </tr>
@@ -47,10 +47,10 @@
                                     @foreach ($users as $user)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
+
 										<td >{{ $user->name }}</td>
 										<td >{{ $user->email }}</td>
-										<td >{{ $user->id_rol }}</td>
+										{{-- <td >{{ $user->id_rol }}</td> --}}
 
                                             <td>
                                                 <form action="{{ route('users.destroy', $user->id) }}" method="POST">

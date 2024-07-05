@@ -14,12 +14,12 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::resource('users', App\Http\Controllers\UserController::class)->middleware('can:admin');
+Route::resource('users', App\Http\Controllers\UserController::class)->middleware('can:super');
 
 Route::resource('clientes', App\Http\Controllers\ClienteController::class);
 Route::resource('vehiculos', App\Http\Controllers\VehiculoController::class)->middleware('can:asesor');
 Route::resource('plans', App\Http\Controllers\PlanController::class)->middleware('can:admin');
-Route::resource('contratos', App\Http\Controllers\ContratoController::class);
+Route::resource('contratos', App\Http\Controllers\ContratoController::class)->middleware('can:asesor');
 Route::resource('roles', App\Http\Controllers\RoleController::class)->middleware('can:super');
 Route::resource('model-has-roles', App\Http\Controllers\ModelHasRoleController::class)->middleware('can:super');
 Route::resource('rols', App\Http\Controllers\RolController::class)->middleware('can:admin');
