@@ -20,11 +20,29 @@ class VehiculoController extends Controller
      * Display a listing of the resource.
      */
     public function index(Request $request): View
-    {
+    {   /*
         $vehiculos = Vehiculo::paginate();
 
         return view('vehiculo.index', compact('vehiculos'))
             ->with('i', ($request->input('page', 1) - 1) * $vehiculos->perPage());
+        */
+
+        $vehiculos = Vehiculo::query()->orderByDesc('id')
+        //->with(['plan'])
+        ->when(request('search'), function ($query) {
+            return $query->where('placa','LIKE','%' . request('search') .'%')
+            ->orWhereHas('cliente', function ($q) {
+                $q->where('nombre','LIKE','%'. request('search') . '%');
+            })
+            ->orWhereHas('cliente', function ($q) {
+                $q->where('apellido','LIKE','%'. request('search') . '%');
+            });
+        })
+        ->paginate();
+
+        return view('vehiculo.index', compact('vehiculos'))
+            ->with('i', ($request->input('page', 1) - 1) * $vehiculos->perPage());
+
     }
 
     /**
@@ -40,12 +58,12 @@ class VehiculoController extends Controller
     public function create_cliente($id): View
     {
         $vehiculo = new Vehiculo();
-        
-        $marcas = Marca::all();   
+
+        $marcas = Marca::all();
         $clases = Clase::all();
         $colors = Color::all();
-        $tipos = Tipo::all(); 
-        $usos = Uso::all();     
+        $tipos = Tipo::all();
+        $usos = Uso::all();
 
         return view('vehiculo.create_cliente', compact('vehiculo','marcas','clases','colors','tipos','usos','id'));
     }

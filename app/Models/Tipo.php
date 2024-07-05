@@ -20,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tipo extends Model
 {
     use HasFactory;
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
@@ -37,5 +37,5 @@ class Tipo extends Model
     {
         return $this->hasMany(\App\Models\Vehiculo::class, 'id', 'id_tipo');
     }
-    
+
 }

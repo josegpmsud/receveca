@@ -31,7 +31,7 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
@@ -48,5 +48,5 @@ class Cliente extends Model
     {
         return $this->hasMany(\App\Models\Vehiculo::class, 'id', 'id_cliente');
     }
-    
+
 }

@@ -1,5 +1,19 @@
 # Aqui se estara agregando la lista de implementaciones pendientes en el proyecto
 
+# Informes de contratos por rangos de fechas
+
+- corregir valores predeterminados en la base de datos fecha_ini, y fecha_fin
+-  arreglar filtro de fechas que no esta funcionando
+
+# Terminar vista pdf de impresion
+
+- incluir todos los campos
+- Agregar contrato
+- Agregar Faltura
+- Agregar copia Factura
+- Agregar carnet
+
+
 # En la vista Welcome
 
 - Mejorar imagenes e informacion sobre el seguro
@@ -74,7 +88,7 @@ V, E ,P, J, G
 
 # Implementaciones ya en el proyecto
 
-## Buscador por cedula 
+## Buscador por cedula
 
 - Al buscar un cliente por su cedula si no se encuentra se habilita un boton para agregar cliente conla cecuda o dato buscado
 

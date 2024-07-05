@@ -18,7 +18,7 @@ class ClienteController extends Controller
      */
     public function index(Request $request): View
     {
-        $clientes = Cliente::query()
+        $clientes = Cliente::query()->orderByDesc('id')
             ->when(request('search'), function ($query) {
                 return $query->where('cedula_rif','LIKE','%' . request('search') .'%')
                 ->orWhere('nombre','LIKE','%' . request('search') .'%')

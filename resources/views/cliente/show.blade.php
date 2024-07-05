@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="card-body bg-white">
-                        
+
                                 <div class="form-group mb-2 mb20">
                                     <strong>Nac:</strong>
                                     {{ $cliente->nac }}
@@ -68,16 +68,16 @@
                     </div>
                     <ul>
 
-                    
+
                 </ul>
                 <div class="table-responsive">
                     <a class="btn btn-sm btn-primary " href="{{ route('vehiculos.create_cliente', $cliente->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Agregar Vehiculo') }}</a>
-                                                    
+
                     <table class="table table-striped table-hover">
                         <thead class="thead">
                             <tr>
                                 <th>No</th>
-                                
+
                             <th >Cliente</th>
                             <th >Marca</th>
                             <th >Clase</th>
@@ -102,7 +102,7 @@
                             @foreach ($vehiculos as $vehiculo)
                                 <tr>
                                     <td>{{ ++$i }}</td>
-                                    
+
                                 <td >{{ $vehiculo->cliente->nombre }} {{ $vehiculo->cliente->apellido }}</td>
                                 <td >{{ $vehiculo->marca->descripcion }}</td>
                                 <td >{{ $vehiculo->clase->descripcion }}</td>
@@ -119,13 +119,13 @@
 
                                     <td>
                                         <form action="{{ route('vehiculos.destroy', $vehiculo->id) }}" method="POST">
-                                            <a class="btn btn-sm btn-primary " href="{{ route('contratos.create_vehiculo', $vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Contrato') }}</a>
-                                            
-                                            <a class="btn btn-sm btn-primary " href="{{ route('vehiculos.show', $vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                            <a class="btn btn-sm btn-success" href="{{ route('vehiculos.edit', $vehiculo->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                            <a class="btn btn-sm btn-warning " href="{{ route('contratos.create_vehiculo', $vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Contrato') }}<i class="bi bi-file-earmark-plus"></i></a>
+
+                                            <a class="btn btn-sm btn-primary " href="{{ route('vehiculos.show', $vehiculo->id) }}"><i class="fa fa-fw fa-eye"></i> <i class="bi bi-file-earmark"></i></a>
+                                            <a class="btn btn-sm btn-success" href="{{ route('vehiculos.edit', $vehiculo->id) }}"><i class="fa fa-fw fa-edit"></i> <i class="bi bi-pencil-square"></i></a>
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                            <button type="submit" class="btn btn-danger btn-sm" onclick="event.preventDefault(); confirm('Are you sure to delete?') ? this.closest('form').submit() : false;"><i class="fa fa-fw fa-trash"></i><i class="bi bi-trash3"></i></button>
                                         </form>
                                     </td>
                                 </tr>

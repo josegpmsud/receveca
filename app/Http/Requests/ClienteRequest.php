@@ -26,13 +26,13 @@ class ClienteRequest extends FormRequest
 			'nombre' => 'required|string',
 			'apellido' => 'required|string',
 			'cedula_rif' => 'required|string',
-			'b_nac' => 'required|string',
-			'b_nombre' => 'required|string',
-			'b_apellido' => 'required|string',
-			'b_cedula' => 'required|string',
+			//'b_nac' => 'required|string',
+			//'b_nombre' => 'required|string',
+			//'b_apellido' => 'required|string',
+			//'b_cedula' => 'required|string',
 			'direccion' => 'required|string',
 			'telefono' => 'required|string',
-			'estado' => 'required',
+			//'estado' => 'required',
         ];
     }
 }

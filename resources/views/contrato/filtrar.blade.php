@@ -19,56 +19,30 @@
                             <form method="GET">
                                 <div class="input-group mb-3">
                                     <input name= "search" type="text" class="form-control" placeholder="Buscar" aria-label="Buscar" aria-describedby="button-addon2">
-                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2"><i class="bi bi-search"></i></button>
+                                    <button class="btn btn-outline-primary" type="submit" id="button-addon2">Buscar</button>
                                 </div>
 
                             </form>
 
-
-
-
-                            <form method="GET" action="{{route('filtro')}}">
+                            <form method="GET" action="{{route('contratos.filtrar')}}">
                                 {{--@csrf--}}
-
-                                <div class="row g-3">
-                                    <div class="col-sm">
-                                        <label for="start_date">Fecha de inicio</label>
-                                        <input type="date" class="form-control" id="start_date" name="start_date" >
-                                </div>
-                                    <div class="col-sm">
-                                        <label for="end_date">Fecha fin</label>
-                                        <input type="date" class="form-control" id="end_date" name="end_date" >
-                                    </div>
-                                    <div class="col-sm">
-                                        <label>Filtar</label><br>
-                                        <button type="submit" class="btn btn-primary"><i class="bi bi-funnel"></i></button>
-                                    </div>
-                                  </div>
-
-
-
                                 <div class="form-group">
-                                    <div>
-
-
-                                    </div>
-                                    <div>
-
-                                    </div>
-
-
+                                    <label for="fecha_inicio">Fecha de inicio:</label>
+                                    <input type="date" class="form-control" id="fecha_inicio" name="fecha_inicio" >
                                 </div>
-
-
+                                <div class="form-group">
+                                    <label for="fecha_fin">Fecha fin:</label>
+                                    <input type="date" class="form-control" id="fecha_fin" name="fecha_fin" >
+                                </div>
+                                <button type="submit" class="btn btn-primary">Buscar</button>
                             </form>
 
                              <div class="float-right">
 
-                                {{--
+
                                 <a href="{{ route('contratos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Crear contrato') }}
                                 </a>
-                                --}}
                               </div>
                         </div>
                     </div>
@@ -85,14 +59,14 @@
                                     <tr>
                                         <th>No</th>
 
-									<th >Cliente</th>
-									<th >Placa Vehiculo</th>
-									<th >Plan</th>
+									<th >Id Usuario</th>
+									<th >Id Vehiculo</th>
+									<th >Id Plan</th>
 									<th >Fecha Ini</th>
 									<th >Fecha Fin</th>
 									<th >Codigo</th>
-									{{-- <th >Cobertura</th>
-									<th >Pago</th> --}}
+									<th >Cobertura</th>
+									<th >Pago</th>
 									<th >Estado</th>
 
                                         <th></th>
@@ -107,19 +81,19 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-										<td >{{ $contrato->vehiculo->cliente->apellido }} {{ $contrato->vehiculo->cliente->nombre }}</td>
+										<td >{{ $contrato->id_usuario }}</td>
 										<td >{{ $contrato->vehiculo->placa }}</td>
 										<td >{{ $contrato->plan->descripcion }}</td>
 										<td >{{ $contrato->fecha_ini }}</td>
 										<td >{{ $contrato->fecha_fin }}</td>
 										<td >{{ $contrato->codigo }}</td>
-										{{-- <td >{{ $contrato->cobertura }}</td>
-										<td >{{ $contrato->pago }}</td> --}}
+										<td >{{ $contrato->cobertura }}</td>
+										<td >{{ $contrato->pago }}</td>
 										<td >{{ $contrato->estado }}</td>
 
                                             <td>
                                                 <form action="{{ route('contratos.destroy', $contrato->id) }}" method="POST">
-                                                    <a href="{{url('pdf_generator',$contrato->id)}}" target="_blank" class="btn btn-primary">Imprimir <i class="bi bi-filetype-pdf"></i></a>
+                                                    <a href="{{url('pdf_generator',$contrato->id)}}" target="_blank" class="btn btn-primary">Dowload <i class="bi bi-filetype-pdf"></i></a>
 
                                                     <a class="btn btn-sm btn-primary " href="{{ route('contratos.show', $contrato->id) }}"><i class="fa fa-fw fa-eye"></i> <i class="bi bi-file-earmark"></i></a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('contratos.edit', $contrato->id) }}"><i class="fa fa-fw fa-edit"></i> <i class="bi bi-pencil-square"></i></a>

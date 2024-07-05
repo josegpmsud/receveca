@@ -28,9 +28,9 @@ class ContratoRequest extends FormRequest
 			//'fecha_ini' => 'required',
 			//'fecha_fin' => 'required',
 			'codigo' => 'required',
-			'cobertura' => 'required',
-			'pago' => 'required',
-			'estado' => 'required',
+			//'cobertura' => 'required',
+			//'pago' => 'required',
+			//'estado' => 'required',
         ];
     }
 }

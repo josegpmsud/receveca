@@ -19,7 +19,7 @@ return new class extends Migration
             $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')
                 ->references('id')
-                ->on('usuarios')
+                ->on('users')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
@@ -40,12 +40,12 @@ return new class extends Migration
             $table->date('fecha_ini')->default(now());
             $table->date('fecha_fin')->default(now()->addYear());
 
-            $table->integer('codigo')->unique();        
-            $table->float('cobertura');
-            $table->float('pago');
-            
+            $table->integer('codigo')->unique();
+            $table->float('cobertura')->nullable(true);
+            $table->float('pago')->nullable(true);
+
             $table->tinyInteger('estado')->default(1);
-            
+
             $table->timestamps();
         });
     }

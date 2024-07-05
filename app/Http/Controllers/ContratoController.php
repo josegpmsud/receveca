@@ -10,6 +10,7 @@ use App\Models\Plan;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Carbon\Carbon;
 
 
 class ContratoController extends Controller
@@ -19,20 +20,53 @@ class ContratoController extends Controller
      */
     public function index(Request $request): View
     {
-        $contratos = Contrato::query()
+
+        $contratos = Contrato::query()->orderByDesc('id')
         //->with(['plan'])
         ->when(request('search'), function ($query) {
             return $query->where('codigo','LIKE','%' . request('search') .'%')
-            ->orWhere('cobertura','LIKE','%' . request('search') .'%')->orderBy('codigo','DESC')
+            ->orWhere('cobertura','LIKE','%' . request('search') .'%')
+            ->orWhere('fecha_ini','LIKE','%' . request('search') .'%')
+            ->orWhere('fecha_fin','LIKE','%' . request('search') .'%')
             ->orWhereHas('plan', function ($q) {
-                $q->where('descripcion','LIKE','%'. request('search') . '%')->orderBy('codigo','DESC');
+                $q->where('descripcion','LIKE','%'. request('search') . '%');
             });
-
         })
         ->paginate();
 
         return view('contrato.index', compact('contratos'))
             ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
+
+    }
+
+    public function filter(Request $request)
+    {
+        // $fechaInicio = $request->input('fecha_inicio');
+        // $fechaFin = $request->input('fecha_fin');
+
+        // $contratos = Contrato::where('fecha_ini', '>=', $fechaInicio)
+        //     ->where('fecha_ini', '<=', $fechaFin)
+        //     ->paginate();
+
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+
+        $contratos = Contrato::whereBetween('fecha_ini', [$start_date, $end_date])->paginate();
+
+        // return view('contrato.index', compact('contratos'))
+        //     ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
+/*
+        $start_date = $request->start_date;
+        $end_date = $request->end_date;
+
+        $contratos = Contrato::whereDate('created_at', '>=', $start_date)
+                            ->whereDate('created_at', '<=', $end_date)
+                            ->paginate();
+    */
+        return view('contrato.index', compact('contratos'))
+        ->with('i', ($request->input('page', 1) - 1) * $contratos->perPage());
+
+
     }
 
     /**

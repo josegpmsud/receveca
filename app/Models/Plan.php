@@ -36,7 +36,7 @@ use Illuminate\Database\Eloquent\Model;
 class Plan extends Model
 {
     use HasFactory;
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
@@ -53,5 +53,5 @@ class Plan extends Model
     {
         return $this->hasMany(\App\Models\Contrato::class, 'id', 'id_plan');
     }
-    
+
 }

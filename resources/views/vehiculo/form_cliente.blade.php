@@ -1,6 +1,6 @@
 <div class="row padding-1 p-1">
     <div class="col-md-12">
-        
+
         <div class="form-group mb-2 mb20">
             <label for="id_cliente" class="form-label">{{ __('Id Cliente') }}</label>
             <input type="text" name="id_cliente" class="form-control @error('id_cliente') is-invalid @enderror" value="{{ $id }}" id="id_cliente" placeholder="Id Cliente">
@@ -18,7 +18,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
             <label for="id_plan" class="form-label">{{ __('Marca') }}</label>
-        
+
               <select id='select'  class="form-control" name="id_marca">
                 <option selected disabled readonly value="{{ old('id_marca', $vehiculo?->id_marca) }}" >--Selecciona la marca--</option>
                 @foreach($marcas as $marca)
@@ -39,7 +39,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
             <label for="id_plan" class="form-label">{{ __('Clase') }}</label>
-        
+
               <select id='select'  class="form-control" name="id_clase">
                 <option selected disabled readonly value="{{ old('id_clase', $vehiculo?->id_clase) }}" >--Selecciona la clase--</option>
                 @foreach($clases as $clase)
@@ -52,7 +52,7 @@
 
         <div class="form-group mb-2 mb20">
             <label for="modelo" class="form-label">{{ __('Modelo') }}</label>
-            <input type="text" name="modelo" class="form-control @error('modelo') is-invalid @enderror" value="{{ old('modelo', $vehiculo?->modelo) }}" id="modelo" placeholder="Modelo">
+            <input type="text" name="modelo" class="form-control @error('modelo') is-invalid @enderror" value="{{ old('modelo', $vehiculo?->modelo) }}" id="modelo" placeholder="Modelo" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
             {!! $errors->first('modelo', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 
@@ -66,7 +66,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
             <label for="id_plan" class="form-label">{{ __('Color') }}</label>
-        
+
               <select id='select'  class="form-control" name="id_color">
                 <option selected disabled readonly value="{{ old('id_color', $vehiculo?->id_color) }}" >--Selecciona el color--</option>
                 @foreach($colors as $color)
@@ -86,7 +86,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
             <label for="id_plan" class="form-label">{{ __('Tipo') }}</label>
-        
+
               <select id='select'  class="form-control" name="id_tipo">
                 <option selected disabled readonly value="{{ old('id_tipo', $vehiculo?->id_tipo) }}" >--Selecciona el tipo--</option>
                 @foreach($tipos as $tipo)
@@ -107,7 +107,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
             <label for="id_plan" class="form-label">{{ __('Uso') }}</label>
-        
+
               <select id='select'  class="form-control" name="id_uso">
                 <option selected disabled readonly value="{{ old('id_uso', $vehiculo?->id_uso) }}" >--Selecciona el uso--</option>
                 @foreach($usos as $uso)
@@ -120,7 +120,7 @@
 
         <div class="form-group mb-2 mb20">
             <label for="placa" class="form-label">{{ __('Placa') }}</label>
-            <input type="text" name="placa" class="form-control @error('placa') is-invalid @enderror" value="{{ old('placa', $vehiculo?->placa) }}" id="placa" placeholder="Placa">
+            <input type="text" name="placa" class="form-control @error('placa') is-invalid @enderror" value="{{ old('placa', $vehiculo?->placa) }}" id="placa" placeholder="Placa" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
             {!! $errors->first('placa', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
@@ -135,7 +135,7 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="serial_motor" class="form-label">{{ __('Serial Motor') }}</label>
-            <input type="text" name="serial_motor" class="form-control @error('serial_motor') is-invalid @enderror" value="{{ old('serial_motor', $vehiculo?->serial_motor) }}" id="serial_motor" placeholder="Serial Motor">
+            <input type="text" name="serial_motor" class="form-control @error('serial_motor') is-invalid @enderror" value="{{ old('serial_motor', $vehiculo?->serial_motor) }}" id="serial_motor" placeholder="Serial Motor" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
             {!! $errors->first('serial_motor', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
         <div class="form-group mb-2 mb20">
@@ -145,7 +145,7 @@
         </div>
         <div class="form-group mb-2 mb20">
             <label for="serial_niv" class="form-label">{{ __('Serial Niv') }}</label>
-            <input type="text" name="serial_niv" class="form-control @error('serial_niv') is-invalid @enderror" value="{{ old('serial_niv', $vehiculo?->serial_niv) }}" id="serial_niv" placeholder="Serial Niv">
+            <input type="text" name="serial_niv" class="form-control @error('serial_niv') is-invalid @enderror" value="{{ old('serial_niv', $vehiculo?->serial_niv) }}" id="serial_niv" placeholder="Serial Niv" onKeyUp="document.getElementById(this.id).value=document.getElementById(this.id).value.toUpperCase()">
             {!! $errors->first('serial_niv', '<div class="invalid-feedback" role="alert"><strong>:message</strong></div>') !!}
         </div>
 

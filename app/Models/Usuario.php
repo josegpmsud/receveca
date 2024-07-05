@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model
 {
     use HasFactory;
-    protected $perPage = 20;
+    protected $perPage = 10;
 
     /**
      * The attributes that are mass assignable.
@@ -43,7 +43,7 @@ class Usuario extends Model
     {
         return $this->belongsTo(\App\Models\Rol::class, 'id_rol', 'id');
     }
-    
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -51,5 +51,5 @@ class Usuario extends Model
     {
         return $this->hasMany(\App\Models\Contrato::class, 'id', 'id_usuario');
     }
-    
+
 }
